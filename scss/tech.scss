@@ -1,0 +1,44 @@
+$frameColor: yellowgreen;
+@mixin round{
+  border-radius: 10px;
+}
+
+.background {
+  @include round;
+  border-color: $frameColor;
+  border-style: solid;
+  width: min-content;
+}
+
+.tech {
+  @include round;
+  align-items: center;
+  background-color: $frameColor;
+  display: inline-flex;
+  flex-direction: column;
+  left: 20px;
+  padding: 20px;
+  position: relative;
+  top: 20px;
+
+  * {
+    margin: 10px;
+  }
+}
+
+.tech-name {
+  font-size: 20px;
+}
+
+.release-date {
+  font-weight: bold;
+}
+
+.desc {
+  text-align: center;
+  width: 150px;
+}
+
+.image {
+  max-width: 120px;
+}
