@@ -14,12 +14,13 @@ $frame-color: yellowgreen;
   border-color: $frame-color;
   border-style: solid;
   left: 20px;
-  position: fixed;
+  position: absolute;
   top: 20px;
 }
 
 .tech-container {
   display: inline;
+  position: relative;
 }
 
 .tech {
