@@ -1,0 +1,33 @@
+@import 'colors';
+@mixin white-text {
+  color:white;
+}
+
+.footer {
+  align-items: center;
+  background-color: $blue;
+  display: flex;
+  flex-direction: column;
+  height: 180px;
+  padding: 40px 20px;
+
+  .game-changers-text {
+    $text-size: 20px;
+    @include white-text;
+    font-size: $text-size;
+    line-height: $text-size;
+  }
+
+  .wolox-text {
+    $text-size: 70px;
+    @include white-text;
+    font-size: $text-size;
+    line-height: $text-size;
+    margin: 10px;
+  }
+
+  .copyright {
+    @include white-text;
+    align-self: flex-end;
+  }
+}
