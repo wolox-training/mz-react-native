@@ -13,7 +13,13 @@ $frame-color: yellowgreen;
   @include round-container;
   border-color: $frame-color;
   border-style: solid;
-  margin: 30px;
+  left: 20px;
+  position: fixed;
+  top: 20px;
+}
+
+.tech-container {
+  display: inline;
 }
 
 .tech {
@@ -23,10 +29,8 @@ $frame-color: yellowgreen;
   display: flex;
   flex-direction: column;
   font-size: 20px;
-  left: 20px;
+  margin: 30px;
   padding: 0 20px;
-  position: relative;
-  top: 20px;
 
   .separated {
     margin: 10px;
