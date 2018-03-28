@@ -1,44 +1,63 @@
-$frameColor: yellowgreen;
-@mixin round{
+$frame-color: yellowgreen;
+@mixin round-container{
   border-radius: 10px;
+  height: 410px;
+  width: 280px;
+}
+
+body {
+  padding: 100px 150px;
 }
 
 .background {
-  @include round;
-  border-color: $frameColor;
+  @include round-container;
+  border-color: $frame-color;
   border-style: solid;
-  width: min-content;
+  margin: 30px;
 }
 
 .tech {
-  @include round;
+  @include round-container;
   align-items: center;
-  background-color: $frameColor;
-  display: inline-flex;
+  background-color: $frame-color;
+  display: flex;
   flex-direction: column;
+  font-size: 20px;
   left: 20px;
-  padding: 20px;
+  padding: 0 20px;
   position: relative;
   top: 20px;
 
   * {
     margin: 10px;
   }
-}
 
-.tech-name {
-  font-size: 20px;
+  span {
+    font-size: 20px;
+    text-align: center;
+    line-height: 20px;
+  }
 }
 
 .release-date {
   font-weight: bold;
 }
 
-.desc {
-  text-align: center;
-  width: 150px;
+.image {
+  max-height: 120px;
+  max-width: 135px;
 }
 
-.image {
-  max-width: 120px;
+.image-container {
+  height: 120px;
+  width: 135px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.techs{
+  padding: 0 75px 100px;
+  display: flex;
+  flex-wrap: wrap;
 }
