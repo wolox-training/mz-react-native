@@ -28,32 +28,32 @@ $frame-color: yellowgreen;
   position: relative;
   top: 20px;
 
-  * {
+  .separated {
     margin: 10px;
   }
 
-  span {
+  .tech-text {
     font-size: 20px;
     line-height: 20px;
     text-align: center;
   }
-}
 
-.release-date {
-  font-weight: bold;
-}
+  .release-date {
+    font-weight: bold;
+  }
 
-.image {
-  max-height: 120px;
-  max-width: 135px;
-}
+  .image-container {
+    align-items: center;
+    display: flex;
+    height: 120px;
+    justify-content: center;
+    width: 135px;
 
-.image-container {
-  align-items: center;
-  display: flex;
-  height: 120px;
-  justify-content: center;
-  width: 135px;
+    .image {
+      max-height: 120px;
+      max-width: 135px;
+    }
+  }
 }
 
 .techs{
