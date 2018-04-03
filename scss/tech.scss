@@ -1,5 +1,5 @@
 @import 'colors';
-@mixin round-container {
+%round-container {
   border-radius: 10px;
   height: 410px;
   width: 280px;
@@ -11,7 +11,7 @@ $background-offset: 20px;
 }
 
 .background {
-  @include round-container;
+  @extend %round-container;
   border-color: $earls-green;
   border-style: solid;
   left: $background-offset;
@@ -30,7 +30,7 @@ $background-offset: 20px;
 }
 
 .tech {
-  @include round-container;
+  @extend %round-container;
   align-items: center;
   background-color: $earls-green;
   display: flex;
