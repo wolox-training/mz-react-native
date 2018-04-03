@@ -1,7 +1,8 @@
 @import 'variables/colors';
+@import 'variables/sizes';
 %round-container {
   border-radius: 10px;
-  height: 410px;
+  height: 460px;
   width: 280px;
 }
 $background-offset: 20px;
@@ -44,8 +45,8 @@ $background-offset: 20px;
   }
 
   .tech-text {
-    font-size: 20px;
-    line-height: 20px;
+    font-size: $tech-font-size;
+    line-height: $tech-font-size + 3;
     text-align: center;
   }
 
@@ -56,7 +57,7 @@ $background-offset: 20px;
   .image-container {
     align-items: center;
     display: flex;
-    height: 120px;
+    height: 100px;
     justify-content: center;
     width: 135px;
 
