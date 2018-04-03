@@ -5,33 +5,24 @@
   height: 460px;
   width: 280px;
 }
-$background-offset: 20px;
+@mixin background-div($offset) {
+  @extend %round-container;
+  border-color: $earls-green;
+  border-style: solid;
+  content: "";    
+  left: - $offset;
+  position: absolute;    
+  top: - $offset;
+  transition: left 0.4s ease, top 0.4s ease;
+}
 
 .content {
   padding: 100px 150px;
 }
 
-.background {
-  @extend %round-container;
-  border-color: $earls-green;
-  border-style: solid;
-  left: $background-offset;
-  position: absolute;
-  top: $background-offset;
-  transition: left 0.4s ease, top 0.4s ease;
-
-  &:hover {
-    left: 2 * $background-offset;
-    top: 2 * $background-offset;
-  }
-}
-
-.tech-container {
-  position: relative;
-}
-
 .tech {
   @extend %round-container;
+  $background-offset: 20px;
   align-items: center;
   background-color: $earls-green;
   display: flex;
@@ -39,6 +30,7 @@ $background-offset: 20px;
   font-size: 20px;
   margin: 30px;
   padding: 10px 20px;
+  position: relative;
 
   .separated {
     margin: 10px;
@@ -66,6 +58,17 @@ $background-offset: 20px;
       max-width: 100%;
     }
   }
+  
+  &:before {
+    @include background-div($background-offset);
+  }
+  
+  &:hover {
+    &:before {
+      @include background-div(-$background-offset);
+    }
+  }
+
 }
 
 .techs{
