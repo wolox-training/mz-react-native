@@ -1,23 +1,19 @@
 @import 'colors';
-@mixin round-container {
-  border-radius: 10px;
-  height: 410px;
-  width: 280px;
-}
 
 .content {
   padding: 100px 150px;
 }
 
 .tech {
-  @include round-container;
   align-items: center;
   background-color: $earls-green;
   display: flex;
   flex-direction: column;
+  height: 410px;
   font-size: 20px;
   margin: 30px;
   padding: 10px 20px;
+  width: 280px;
 
   .separated {
     margin: 10px;
