@@ -1,8 +1,9 @@
+@import 'colors';
 $navbar-height: 90px;
 
 .navbar {
   align-items: center;
-  box-shadow: 0 1px 10px gray;
+  box-shadow: 0 1px 10px $silver;
   display: flex;
   height: $navbar-height;
   justify-content: space-between;
