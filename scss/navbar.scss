@@ -1,4 +1,5 @@
 @import 'variables/_colors';
+@import 'variables/_sizes';
 $navbar-height: 90px;
 
 .navbar {
@@ -15,5 +16,5 @@ $navbar-height: 90px;
 }
 
 .dev-tools {
-  font-size: 24px;
+  font-size: $dev-tools-font-size;
 }

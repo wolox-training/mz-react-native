@@ -1,4 +1,5 @@
 @import 'variables/_colors';
+@import 'variables/_sizes';
 %white-text {
   color: white;
 }
@@ -14,16 +15,14 @@
 
 .game-changers-text {
   @extend %white-text;
-  $text-size: 20px;
-  font-size: $text-size;
-  line-height: $text-size+3;
+  font-size: $game-changers-font-size;
+  line-height: $game-changers-font-size + 3;
 }
 
 .wolox-text {
   @extend %white-text;
-  $text-size: 70px;
-  font-size: $text-size;
-  line-height: $text-size;
+  font-size: $footer-wolox-font-size;
+  line-height: $footer-wolox-font-size + 5;
   margin: 10px;
 }
 
