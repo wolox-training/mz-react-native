@@ -1,0 +1,19 @@
+@import 'colors';
+$navbar-height: 90px;
+
+.navbar {
+  align-items: center;
+  box-shadow: 0 1px 10px $silver;
+  display: flex;
+  height: $navbar-height;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.logo {
+  max-height: $navbar-height;
+}
+
+.dev-tools {
+  font-size: 24px;
+}
