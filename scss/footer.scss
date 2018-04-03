@@ -12,15 +12,15 @@
   padding: 40px 20px;
 
   .game-changers-text {
-    $text-size: 20px;
     @include white-text;
+    $text-size: 20px;
     font-size: $text-size;
     line-height: $text-size;
   }
 
   .wolox-text {
-    $text-size: 70px;
     @include white-text;
+    $text-size: 70px;
     font-size: $text-size;
     line-height: $text-size;
     margin: 10px;
