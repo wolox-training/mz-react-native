@@ -1,0 +1,68 @@
+$frame-color: yellowgreen;
+@mixin round-container {
+  border-radius: 10px;
+  height: 410px;
+  width: 280px;
+}
+
+.content {
+  padding: 100px 150px;
+}
+
+.background {
+  @include round-container;
+  border-color: $frame-color;
+  border-style: solid;
+  left: 20px;
+  position: absolute;
+  top: 20px;
+}
+
+.tech-container {
+  display: inline;
+  position: relative;
+}
+
+.tech {
+  @include round-container;
+  align-items: center;
+  background-color: $frame-color;
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+  margin: 30px;
+  padding: 0 20px;
+
+  .separated {
+    margin: 10px;
+  }
+
+  .tech-text {
+    font-size: 20px;
+    line-height: 20px;
+    text-align: center;
+  }
+
+  .release-date {
+    font-weight: bold;
+  }
+
+  .image-container {
+    align-items: center;
+    display: flex;
+    height: 120px;
+    justify-content: center;
+    width: 135px;
+
+    .image {
+      max-height: 120px;
+      max-width: 135px;
+    }
+  }
+}
+
+.techs{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 75px 100px;
+}
