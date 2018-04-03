@@ -1,11 +1,13 @@
 .title {
   align-items: center;
-  display: flex;
+  display: inline-flex;
+  grid-area: title;
 
   h1 {
     font-size: 30px;
     position: relative;
     right: 20px;
+    white-space: nowrap;
   }
 }
 
