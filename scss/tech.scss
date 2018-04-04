@@ -1,10 +1,16 @@
 @import 'variables/colors';
 @import 'variables/sizes';
+
 %round-container {
   border-radius: 10px;
   height: 460px;
   width: 280px;
 }
+
+%separated {
+  margin: 10px;
+}
+
 @mixin background-div($offset) {
   @extend %round-container;
   border-color: $earls-green;
@@ -33,11 +39,8 @@
   padding: 10px 20px;
   position: relative;
 
-  .separated {
-    margin: 10px;
-  }
-
   .tech-text {
+    @extend %separated;
     font-size: $tech-font-size;
     line-height: $tech-font-size + 3;
     text-align: center;
@@ -48,6 +51,7 @@
   }
 
   .image-container {
+    @extend %separated;
     align-items: center;
     display: flex;
     height: 100px;
