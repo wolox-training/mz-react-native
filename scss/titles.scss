@@ -1,14 +1,14 @@
 .title {
   align-items: center;
-  display: inline-flex;
-  grid-area: title;
+  display: flex;
+  margin: 40px 0;
+}
 
-  h1 {
-    font-size: 30px;
-    position: relative;
-    right: 20px;
-    white-space: nowrap;
-  }
+.title-text {
+  font-size: 30px;
+  position: relative;
+  right: 20px;
+  white-space: nowrap;
 }
 
 .title-image {
