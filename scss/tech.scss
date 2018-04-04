@@ -46,10 +46,6 @@
     text-align: center;
   }
 
-  .release-date {
-    font-weight: bold;
-  }
-
   .image-container {
     @extend %separated;
     align-items: center;
@@ -80,4 +76,8 @@
   display: flex;
   flex-wrap: wrap;
   padding: 0 75px 100px;
+}
+
+.bold {
+  font-weight: bold;
 }
