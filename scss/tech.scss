@@ -12,9 +12,9 @@
   @extend %round-container;
   border-color: $earls-green;
   border-style: solid;
-  content: "";    
+  content: '';
   left: - $offset;
-  position: absolute;    
+  position: absolute;
   top: - $offset;
   transition: left 0.4s ease, top 0.4s ease;
   z-index: -1;
