@@ -1,5 +1,6 @@
-@import 'colors';
-@mixin white-text {
+@import 'variables/colors';
+@import 'variables/sizes';
+%white-text {
   color: white;
 }
 
@@ -11,24 +12,22 @@
   flex-direction: column;
   height: 180px;
   padding: 40px 20px;
+}
 
-  .game-changers-text {
-    @include white-text;
-    $text-size: 20px;
-    font-size: $text-size;
-    line-height: $text-size;
-  }
+.game-changers-text {
+  @extend %white-text;
+  font-size: $game-changers-font-size;
+  line-height: $game-changers-font-size + 3;
+}
 
-  .wolox-text {
-    @include white-text;
-    $text-size: 70px;
-    font-size: $text-size;
-    line-height: $text-size;
-    margin: 10px;
-  }
+.wolox-text {
+  @extend %white-text;
+  font-size: $footer-wolox-font-size;
+  line-height: $footer-wolox-font-size + 5;
+  margin: 10px;
+}
 
-  .copyright {
-    @include white-text;
-    align-self: flex-end;
-  }
+.copyright {
+  @extend %white-text;
+  align-self: flex-end;
 }

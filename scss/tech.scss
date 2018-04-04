@@ -1,4 +1,5 @@
-@import 'colors';
+@import 'variables/colors';
+@import 'variables/sizes';
 
 .layout {
   display: grid;
@@ -42,14 +43,17 @@
   height: 410px;
   justify-content: center;
   width: 280px;
+  margin: 30px;
+  padding: 10px 20px;
+  position: relative;
 
   .separated {
     margin: 10px;
   }
 
   .tech-text {
-    font-size: 20px;
-    line-height: 20px;
+    font-size: $tech-font-size;
+    line-height: $tech-font-size + 3;
     text-align: center;
   }
 
@@ -60,7 +64,7 @@
   .image-container {
     align-items: center;
     display: flex;
-    height: 120px;
+    height: 100px;
     justify-content: center;
     width: 135px;
 
