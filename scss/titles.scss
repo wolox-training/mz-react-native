@@ -1,16 +1,16 @@
-.title {
-  align-items: center;
-  display: flex;
-  margin: 40px 0;
-}
-
 .title-text {
   font-size: 30px;
-  position: relative;
-  right: 20px;
-  white-space: nowrap;
-}
+  display: flex;
+  align-items: center;
 
-.title-image {
-  max-width: 100px;
+  &:before {
+    content: '';
+    background-image: url('assets/triangle.svg');
+    background-size: $title-image-size $title-image-size;
+    height: $title-image-size;
+    left: $title-image-size / 3; 
+    position: relative;
+    width: $title-image-size; 
+    z-index: -1;
+  }
 }
