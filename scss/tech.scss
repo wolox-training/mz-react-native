@@ -1,36 +1,32 @@
-@import 'colors';
-@mixin round-container {
+%round-container {
   border-radius: 10px;
-  height: 410px;
+  height: 460px;
   width: 280px;
 }
-$background-offset: 20px;
+
+%separated {
+  margin: 10px;
+}
+
+@mixin background-div($offset) {
+  @extend %round-container;
+  border-color: $earls-green;
+  border-style: solid;
+  content: '';
+  left: - $offset;
+  position: absolute;
+  top: - $offset;
+  transition: left 0.4s ease, top 0.4s ease;
+  z-index: -1;
+}
 
 .content {
   padding: 100px 150px;
 }
 
-.background {
-  @include round-container;
-  border-color: $earls-green;
-  border-style: solid;
-  left: $background-offset;
-  position: absolute;
-  top: $background-offset;
-  transition: left 0.4s ease, top 0.4s ease;
-
-  &:hover {
-    left: 2 * $background-offset;
-    top: 2 * $background-offset;
-  }
-}
-
-.tech-container {
-  position: relative;
-}
-
 .tech {
-  @include round-container;
+  @extend %round-container;
+  $background-offset: 20px;
   align-items: center;
   background-color: $earls-green;
   display: flex;
@@ -38,25 +34,20 @@ $background-offset: 20px;
   font-size: 20px;
   margin: 30px;
   padding: 10px 20px;
-
-  .separated {
-    margin: 10px;
-  }
+  position: relative;
 
   .tech-text {
-    font-size: 20px;
-    line-height: 20px;
+    @extend %separated;
+    font-size: $tech-font-size;
+    line-height: $tech-font-size + 3;
     text-align: center;
   }
 
-  .release-date {
-    font-weight: bold;
-  }
-
   .image-container {
+    @extend %separated;
     align-items: center;
     display: flex;
-    height: 120px;
+    height: 100px;
     justify-content: center;
     width: 135px;
 
@@ -65,10 +56,25 @@ $background-offset: 20px;
       max-width: 100%;
     }
   }
+  
+  &:before {
+    @include background-div($background-offset);
+  }
+  
+  &:hover {
+    &:before {
+      @include background-div(-$background-offset);
+    }
+  }
+
 }
 
 .techs{
   display: flex;
   flex-wrap: wrap;
   padding: 0 75px 100px;
+}
+
+.bold {
+  font-weight: bold;
 }
