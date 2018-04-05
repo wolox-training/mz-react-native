@@ -1,21 +1,21 @@
-@import 'variables/sizes';
-
-.title {
+.title-text {
+  font-size: 30px;
+  display: flex;
   align-items: center;
-  display: inline-flex;
-  grid-area: title;
 
-  h1 {
-    font-size: 30px;
+  &:before {
+    content: '';
+    background-image: url('assets/triangle.svg');
+    background-size: $title-image-size $title-image-size;
+    height: $title-image-size;
+    left: $title-image-size / 3; 
     position: relative;
     right: 20px;
     white-space: nowrap;
     @media only screen and (max-width: $mobile-width-breakpoint){
       font-size: 50px;
     }
+    width: $title-image-size; 
+    z-index: -1;
   }
-}
-
-.title-image {
-  max-width: 100px;
 }
