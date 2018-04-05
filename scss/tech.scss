@@ -8,6 +8,16 @@
   margin: 10px;
 }
 
+.layout {
+  display: grid;
+  grid-gap: 40px 0px;
+  grid-template-areas: 
+    "navbar navbar navbar"
+    "...... category ......"
+    "...... category ......"
+    "footer footer footer";
+}
+
 @mixin background-div($offset) {
   @extend %round-container;
   border-color: $earls-green;
@@ -20,21 +30,30 @@
   z-index: -1;
 }
 
-.content {
-  padding: 100px 150px;
+.category {
+  display: flex;
+  flex-direction: column;
+  grid-area: category;
+  grid-row: span 1;
 }
 
+.techs {
+  align-self: center;
+  display: grid;
+  grid-gap: 10px 10px;
+  grid-template-columns: repeat(3, max-content);
+} 
+
 .tech {
-  @extend %round-container;
-  $background-offset: 20px;
   align-items: center;
-  background-color: $earls-green;
   display: flex;
   flex-direction: column;
   font-size: 20px;
+  height: 410px;
+  justify-content: center;
+  width: 280px;
   margin: 30px;
   padding: 10px 20px;
-  position: relative;
 
   .tech-text {
     @extend %separated;
@@ -56,23 +75,12 @@
       max-width: 100%;
     }
   }
-  
-  &:before {
-    @include background-div($background-offset);
-  }
-  
-  &:hover {
-    &:before {
-      @include background-div(-$background-offset);
-    }
-  }
 
-}
-
-.techs{
-  display: flex;
-  flex-wrap: wrap;
-  padding: 0 75px 100px;
+  &:first-child {
+    border-right: 2px solid $earls-green;
+    grid-row: 1/3;
+    height: 100%;
+  }
 }
 
 .bold {
