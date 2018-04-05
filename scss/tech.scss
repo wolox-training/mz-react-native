@@ -16,9 +16,6 @@
     "...... category ......"
     "...... category ......"
     "footer footer footer";
-  @media only screen and (max-width: $mobile-width-breakpoint){
-    grid-template-columns: 1fr 80% 1fr;
-  }
 }
 
 .category {
@@ -33,9 +30,6 @@
   display: grid;
   grid-gap: 10px 10px;
   grid-template-columns: repeat(3, max-content);
-  @media only screen and (max-width: $mobile-width-breakpoint){
-    grid-template-columns: auto;
-  }
 } 
 
 .tech {
@@ -76,19 +70,29 @@
     border-right: 2px solid $earls-green;
     grid-row: 1/3;
     height: 100%;
-    
-    @media only screen and (max-width: $mobile-width-breakpoint){
-      border-width: 0;
-    }
-  }
-  
-  &:not(:first-child) {
-    @media only screen and (max-width: $mobile-width-breakpoint){
-      border-top: 2px solid $earls-green;
-    }
   }
 }
 
 .bold {
   font-weight: bold;
+}
+
+@media only screen and (max-width: $mobile-width-breakpoint){
+  .layout {
+    grid-template-columns: 1fr 80% 1fr;
+  }
+
+  .techs {
+    grid-template-columns: auto;
+  }
+
+  .tech{
+    &:first-child {
+      border-width: 0;
+    }
+
+    &:not(:first-child) {
+      border-top: 2px solid $earls-green;
+    }
+  }
 }
