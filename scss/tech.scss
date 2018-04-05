@@ -10,24 +10,12 @@
 
 .layout {
   display: grid;
-  grid-gap: 40px 0px;
+  grid-gap: 40px 0;
   grid-template-areas: 
     "navbar navbar navbar"
     "...... category ......"
     "...... category ......"
     "footer footer footer";
-}
-
-@mixin background-div($offset) {
-  @extend %round-container;
-  border-color: $earls-green;
-  border-style: solid;
-  content: '';
-  left: - $offset;
-  position: absolute;
-  top: - $offset;
-  transition: left 0.4s ease, top 0.4s ease;
-  z-index: -1;
 }
 
 .category {
@@ -46,9 +34,11 @@
 
 .tech {
   align-items: center;
+  border-color: $earls-green;
   display: flex;
   flex-direction: column;
   font-size: 20px;
+  grid-row: span 1;  
   height: 410px;
   justify-content: center;
   width: 280px;
@@ -85,4 +75,24 @@
 
 .bold {
   font-weight: bold;
+}
+
+@media only screen and (max-width: $mobile-width-breakpoint){
+  .layout {
+    grid-template-columns: 1fr 80% 1fr;
+  }
+
+  .techs {
+    grid-template-columns: auto;
+  }
+
+  .tech{
+    &:first-child {
+      border-width: 0;
+    }
+
+    &:not(:first-child) {
+      border-top: 2px solid $earls-green;
+    }
+  }
 }

@@ -10,7 +10,15 @@
     height: $title-image-size;
     left: $title-image-size / 3; 
     position: relative;
+    right: 20px;
+    white-space: nowrap;
     width: $title-image-size; 
     z-index: -1;
+  }
+}
+
+@media only screen and (max-width: $mobile-width-breakpoint){
+  .title-text:before {
+    font-size: 50px;
   }
 }
