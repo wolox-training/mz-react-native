@@ -1,3 +1,3 @@
-function Book(props) {
+export default function Book(props) {
   return null;
 }
