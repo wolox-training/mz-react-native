@@ -1,5 +1,8 @@
 @import "../../../../../app";
 
 .filter-select {
-  @extend %input-field;
+  @extend %input-styles;
+
+  font-style: italic;
+  margin-right: 28px;
 }

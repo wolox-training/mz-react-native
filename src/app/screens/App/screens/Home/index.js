@@ -3,6 +3,7 @@ import books from "../../../../../data/books.json";
 import BookList from "./components/BookList";
 import FilterSelect from "./components/FilterSelect";
 import SearchBox from "./components/SearchBox";
+import "./Home.css";
 
 class Home extends Component {
   constructor(props) {
@@ -25,9 +26,11 @@ class Home extends Component {
 
   render() {
     return (
-      <div>
-        <FilterSelect onChange={this.handleInputChange} />
-        <SearchBox onChange={this.handleInputChange} />
+      <div className="home">
+        <div className="filters-container">
+          <FilterSelect onChange={this.handleInputChange} />
+          <SearchBox onChange={this.handleInputChange} />
+        </div>
         <BookList books={this.state.filteredBooks} />
       </div>
     );
