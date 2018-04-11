@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
 import books from '../../../../../data/books.json';
-import BookList from './components/BookList';
-import FilterSelect from './components/FilterSelect';
-import SearchBox from './components/SearchBox';
-import './styles.css';
+import Home from './layout';
 
-class Home extends Component {
+class HomeContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -26,15 +23,12 @@ class Home extends Component {
 
   render() {
     return (
-      <div className="home">
-        <div className="filters-container">
-          <FilterSelect onChange={this.handleInputChange} />
-          <SearchBox onChange={this.handleInputChange} />
-        </div>
-        <BookList books={this.state.filteredBooks} />
-      </div>
+      <Home
+        onChange={this.handleInputChange}
+        books={this.state.filteredBooks}
+      />
     );
   }
 }
 
-export default Home;
+export default HomeContainer;

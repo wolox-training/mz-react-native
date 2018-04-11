@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import Home from './screens/Home';
+import HomeContainer from './screens/Home';
 
 class App extends Component {
   render() {
-    return <Home />;
+    return <HomeContainer />;
   }
 }
 
