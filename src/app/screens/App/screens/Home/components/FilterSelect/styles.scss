@@ -1,10 +1,10 @@
+$arrow-url: url('../../../../../../../assets/ASSETS/arrow-down.svg');
 @import '../../../../../../app';
 
 .filter-select {
   @extend %input-styles;
 
-  background: $wild-sand
-    url('../../../../../../../assets/ASSETS/arrow-down.svg') no-repeat right;
+  background: $wild-sand $arrow-url no-repeat right;
   background-size: 15px 11px;
   background-origin: content-box;
   font-style: italic;
