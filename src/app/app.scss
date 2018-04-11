@@ -1,7 +1,9 @@
+@import "variables/colors";
+
 %input-field {
-  background: #f4f4f4;
+  background: $wild-sand;
   border-style: none;
-  color: #9b9b9b;
+  color: $dusty-gray;
   font-family: Roboto-Italic;
   font-size: 14px;
   height: 38px;
