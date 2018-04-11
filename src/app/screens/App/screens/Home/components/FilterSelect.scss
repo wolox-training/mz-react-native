@@ -3,6 +3,9 @@
 .filter-select {
   @extend %input-styles;
 
+  background: $wild-sand url("/assets/ASSETS/arrow-down.svg") no-repeat right;
+  background-size: 15px 11px;
+  background-origin: content-box;
   font-style: italic;
   margin-right: 28px;
 }
