@@ -1,5 +1,16 @@
 @import "../../../../../app";
 
+.search-container {
+  display: flex;
+}
+
 .search {
   @extend %input-field;
+}
+
+.search-image {
+  background: #a5cd39;
+  width: 24px;
+  height: 24px;
+  padding: 8px 6px 6px 8px;
 }
