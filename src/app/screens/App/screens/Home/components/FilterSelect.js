@@ -1,5 +1,5 @@
-import React from "react";
-import "./FilterSelect.css";
+import React from 'react';
+import './FilterSelect.css';
 
 export default function FilterSelect(props) {
   return (

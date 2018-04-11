@@ -1,5 +1,5 @@
-import React from "react";
-import "./SearchBox.css";
+import React from 'react';
+import './SearchBox.css';
 
 export default function SearchBox(props) {
   return (
