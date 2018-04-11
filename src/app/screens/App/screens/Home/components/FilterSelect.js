@@ -1,8 +1,13 @@
 import React from "react";
+import styles from "./FilterSelect.css";
 
 export default function FilterSelect(props) {
   return (
-    <select name="filterField" onChange={props.onChange}>
+    <select
+      name="filterField"
+      onChange={props.onChange}
+      className="filter-select"
+    >
       <option disabled selected hidden value="">
         Seleccionar filtro
       </option>

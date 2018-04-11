@@ -20,5 +20,11 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+#local env
 .vscode/
 .eslintrc.js
+
+#css
+*.css
+*.css.map
+/.sass-cache
