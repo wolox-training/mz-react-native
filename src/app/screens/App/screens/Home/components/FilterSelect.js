@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./FilterSelect.css";
+import "./FilterSelect.css";
 
 export default function FilterSelect(props) {
   return (
@@ -7,8 +7,9 @@ export default function FilterSelect(props) {
       name="filterField"
       onChange={props.onChange}
       className="filter-select"
+      defaultValue=""
     >
-      <option disabled selected hidden value="">
+      <option disabled hidden value="">
         Seleccionar filtro
       </option>
       <option value="author">Author</option>
