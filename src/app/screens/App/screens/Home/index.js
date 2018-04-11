@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import books from "../../../../../data/books.json";
-import Book from "./components/Book";
+import BookList from "./components/BookList";
 
 class Home extends Component {
   render() {
-    return <Book />;
+    return <BookList books={books} />;
   }
 }
 
