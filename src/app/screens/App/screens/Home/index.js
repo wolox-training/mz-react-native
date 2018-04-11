@@ -3,7 +3,7 @@ import books from '../../../../../data/books.json';
 import BookList from './components/BookList';
 import FilterSelect from './components/FilterSelect';
 import SearchBox from './components/SearchBox';
-import './Home.css';
+import './styles.css';
 
 class Home extends Component {
   constructor(props) {

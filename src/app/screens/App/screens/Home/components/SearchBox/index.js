@@ -1,7 +1,7 @@
 import React from 'react';
-import { SEARCH, SEARCHBUTTONALTTEXT } from '../strings';
-import './SearchBox.css';
-import Icon from '../../../../../../assets/ASSETS/search.svg';
+import { SEARCH, SEARCHBUTTONALTTEXT } from '../../strings';
+import './styles.css';
+import Icon from '../../../../../../../assets/ASSETS/search.svg';
 
 export default function SearchBox(props) {
   return (

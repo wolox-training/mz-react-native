@@ -1,6 +1,6 @@
 import React from 'react';
-import { AUTHOR, TITLE, SELECTFILTER } from '../strings';
-import './FilterSelect.css';
+import { AUTHOR, TITLE, SELECTFILTER } from '../../strings';
+import './styles.css';
 
 export default function FilterSelect(props) {
   return (
