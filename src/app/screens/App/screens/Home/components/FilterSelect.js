@@ -1,4 +1,5 @@
 import React from 'react';
+import { AUTHOR, TITLE, SELECTFILTER } from '../strings';
 import './FilterSelect.css';
 
 export default function FilterSelect(props) {
@@ -10,10 +11,10 @@ export default function FilterSelect(props) {
       defaultValue=""
     >
       <option disabled hidden value="">
-        Seleccionar filtro
+        {SELECTFILTER}
       </option>
-      <option value="author">Author</option>
-      <option value="title">Title</option>
+      <option value="author">{AUTHOR}</option>
+      <option value="title">{TITLE}</option>
     </select>
   );
 }

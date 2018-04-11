@@ -1,4 +1,5 @@
 import React from 'react';
+import { SEARCH, SEARCHBUTTONALTTEXT } from '../strings';
 import './SearchBox.css';
 
 export default function SearchBox(props) {
@@ -8,12 +9,12 @@ export default function SearchBox(props) {
         type="text"
         name="searchText"
         onChange={props.onChange}
-        placeholder="Buscar..."
+        placeholder={SEARCH}
         className="search"
       />
       <img
         src="assets/ASSETS/search.svg"
-        alt="Search"
+        alt={SEARCHBUTTONALTTEXT}
         className="search-image"
       />
     </div>
