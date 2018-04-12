@@ -9,6 +9,7 @@ class HomeContainer extends Component {
       filteredBooks: books
     };
     this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleSearch = this.handleSearch.bind(this);
   }
 
   handleInputChange(event) {
@@ -21,10 +22,21 @@ class HomeContainer extends Component {
     });
   }
 
+  handleSearch() {
+    const filteredBooks = books.filter(book => {
+      const bookProperty = book[this.state.filterField];
+      const lowerCaseBookProperty = bookProperty.toLowerCase();
+      const lowerCaseSearchedText = this.state.searchText.toLowerCase();
+      return lowerCaseBookProperty.search(lowerCaseSearchedText) !== -1;
+    });
+    this.setState({ filteredBooks });
+  }
+
   render() {
     return (
       <Home
         onChange={this.handleInputChange}
+        onSearch={this.handleSearch}
         books={this.state.filteredBooks}
       />
     );
