@@ -1,0 +1,21 @@
+@import '../../../../../../app';
+
+.search-container {
+  display: flex;
+}
+
+.search {
+  @extend %input-styles;
+
+  &::placeholder {
+    @extend %input-styles;
+
+    font-style: italic;
+    padding: 0;
+  }
+}
+
+.search-image {
+  background: $atlantis;
+  padding: 8px 6px 6px 8px;
+}
