@@ -1,5 +1,5 @@
 import React from 'react';
-import { AUTHOR, TITLE, SELECTFILTER } from '../../strings';
+import { AUTHOR, TITLE, SELECT_FILTER } from '../../strings';
 import './styles.css';
 
 export default function FilterSelect(props) {
@@ -11,7 +11,7 @@ export default function FilterSelect(props) {
       defaultValue=""
     >
       <option disabled hidden value="">
-        {SELECTFILTER}
+        {SELECT_FILTER}
       </option>
       <option value="author">{AUTHOR}</option>
       <option value="title">{TITLE}</option>

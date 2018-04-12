@@ -1,5 +1,5 @@
 import React from 'react';
-import { BOOKCOVERALTTEXT } from '../../strings';
+import { BOOK_COVER_ALT_TEXT } from '../../strings';
 import './styles.css';
 import defaultBookImage from '../../../../../../../assets/ASSETS/default_book.svg';
 
@@ -15,7 +15,7 @@ export default function Book(props) {
         <img
           src={image_url}
           className={has_image ? 'book-image' : 'default-image'}
-          alt={BOOKCOVERALTTEXT}
+          alt={BOOK_COVER_ALT_TEXT}
         />
       </div>
       <span className="book-title">{props.book.title}</span>
