@@ -23,13 +23,15 @@ class HomeContainer extends Component {
   }
 
   handleSearch() {
-    const filteredBooks = books.filter(book => {
-      const bookProperty = book[this.state.filterField];
-      const lowerCaseBookProperty = bookProperty.toLowerCase();
-      const lowerCaseSearchedText = this.state.searchText.toLowerCase();
-      return lowerCaseBookProperty.search(lowerCaseSearchedText) !== -1;
-    });
-    this.setState({ filteredBooks });
+    if (this.state.filterField) {
+      const filteredBooks = books.filter(book => {
+        const bookProperty = book[this.state.filterField];
+        const lowerCaseBookProperty = bookProperty.toLowerCase();
+        const lowerCaseSearchedText = this.state.searchText.toLowerCase();
+        return lowerCaseBookProperty.search(lowerCaseSearchedText) !== -1;
+      });
+      this.setState({ filteredBooks });
+    }
   }
 
   render() {
