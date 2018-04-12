@@ -1,6 +1,7 @@
 import React from 'react';
-import { AUTHOR, TITLE, SELECTFILTER } from '../../strings';
+import { AUTHOR, TITLE, SELECT_FILTER } from '../../strings';
 import './styles.css';
+import PropTypes from 'prop-types';
 
 export default function FilterSelect(props) {
   return (
@@ -11,10 +12,14 @@ export default function FilterSelect(props) {
       defaultValue=""
     >
       <option disabled hidden value="">
-        {SELECTFILTER}
+        {SELECT_FILTER}
       </option>
       <option value="author">{AUTHOR}</option>
       <option value="title">{TITLE}</option>
     </select>
   );
 }
+
+FilterSelect.propTypes = {
+  onChange: PropTypes.func.isRequired
+};

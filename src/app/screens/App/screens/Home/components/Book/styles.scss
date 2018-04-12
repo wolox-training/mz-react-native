@@ -1,0 +1,53 @@
+@import '../../../../../../constants/colors';
+%book-details {
+  letter-spacing: 0px;
+  line-height: 19px;
+}
+$book-width: 128px;
+
+.book {
+  display: flex;
+  flex-direction: column;
+  width: $book-width;
+  align-items: flex-start;
+}
+
+.backgroundgray {
+  background: $alto;
+}
+
+.book-image-container {
+  width: $book-width;
+  height: 182px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.default-image {
+  width: 69px;
+  height: 69px;
+  border-radius: 100%;
+}
+
+.book-image {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.book-title {
+  @extend %book-details;
+
+  font-family: Roboto-Bold;
+  font-size: 14px;
+  margin-top: 11px;
+  font-weight: bold;
+}
+
+.book-author {
+  @extend %book-details;
+
+  font-family: Roboto-Regular;
+  font-size: 12px;
+  color: $tundora;
+}
