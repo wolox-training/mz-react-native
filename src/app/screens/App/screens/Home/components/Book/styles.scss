@@ -3,11 +3,12 @@
   letter-spacing: 0px;
   line-height: 19px;
 }
+$book-width: 128px;
 
 .book {
   display: flex;
   flex-direction: column;
-  width: fit-content;
+  width: $book-width;
   align-items: flex-start;
 }
 
@@ -16,7 +17,7 @@
 }
 
 .book-image-container {
-  width: 128px;
+  width: $book-width;
   height: 182px;
   display: flex;
   justify-content: center;
@@ -24,7 +25,6 @@
 }
 
 .default-image {
-  border: 3px solid $shady-lady;
   width: 69px;
   height: 69px;
   border-radius: 100%;
