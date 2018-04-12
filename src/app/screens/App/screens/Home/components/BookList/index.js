@@ -1,10 +1,6 @@
 import React from 'react';
+import Book from '../Book';
 
 export default function BookList(props) {
-  return props.books.map(book => (
-    <div key={book.id}>
-      <span>{book.title}</span>
-      <span>{book.author}</span>
-    </div>
-  ));
+  return props.books.map(book => <Book key={book.id} book={book} />);
 }

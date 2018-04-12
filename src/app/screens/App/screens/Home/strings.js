@@ -3,3 +3,4 @@ export const AUTHOR = 'Autor';
 export const SELECTFILTER = 'Seleccionar filtro';
 export const SEARCH = 'Buscar...';
 export const SEARCHBUTTONALTTEXT = 'Buscar';
+export const BOOKCOVERALTTEXT = 'Libro';
