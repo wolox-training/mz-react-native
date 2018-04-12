@@ -2,6 +2,7 @@ import React from 'react';
 import BookList from './components/BookList';
 import FilterSelect from './components/FilterSelect';
 import SearchBox from './components/SearchBox';
+import PropTypes from 'prop-types';
 import './styles.css';
 
 export default function Home(props) {
@@ -15,3 +16,8 @@ export default function Home(props) {
     </div>
   );
 }
+
+Home.propTypes = {
+  books: PropTypes.arrayOf(PropTypes.object).isRequired,
+  onChange: PropTypes.func.isRequired
+};

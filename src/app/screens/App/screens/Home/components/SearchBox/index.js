@@ -2,6 +2,7 @@ import React from 'react';
 import { SEARCH, SEARCH_BUTTON_ALT_TEXT } from '../../strings';
 import './styles.css';
 import Icon from '../../../../../../../assets/ASSETS/search.svg';
+import PropTypes from 'prop-types';
 
 export default function SearchBox(props) {
   return (
@@ -17,3 +18,7 @@ export default function SearchBox(props) {
     </div>
   );
 }
+
+SearchBox.propTypes = {
+  onChange: PropTypes.func.isRequired
+};

@@ -2,13 +2,14 @@ import React from 'react';
 import { BOOK_COVER_ALT_TEXT } from '../../strings';
 import './styles.css';
 import defaultBookImage from '../../../../../../../assets/ASSETS/default_book.svg';
+import PropTypes from 'prop-types';
 
 export default function Book(props) {
   const has_image = props.book.image_url;
   const image_url = props.book.image_url || defaultBookImage;
 
   return (
-    <div key={props.book.id} className="book">
+    <div className="book">
       <div
         className={`book-image-container ${has_image ? '' : 'backgroundgray'}`}
       >
@@ -23,3 +24,11 @@ export default function Book(props) {
     </div>
   );
 }
+
+Book.propTypes = {
+  book: PropTypes.shape({
+    image_url: PropTypes.string,
+    title: PropTypes.string.isRequired,
+    author: PropTypes.string.isRequired
+  })
+};

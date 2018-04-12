@@ -1,5 +1,6 @@
 import React from 'react';
 import Book from '../Book';
+import PropTypes from 'prop-types';
 import './styles.css';
 
 export default function BookList(props) {
@@ -9,3 +10,7 @@ export default function BookList(props) {
     </div>
   );
 }
+
+BookList.propTypes = {
+  books: PropTypes.arrayOf(PropTypes.object).isRequired
+};
