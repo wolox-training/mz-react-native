@@ -10,9 +10,7 @@ export default function Book(props) {
 
   return (
     <div className="book">
-      <div
-        className={`book-image-container ${has_image ? '' : 'backgroundgray'}`}
-      >
+      <div className={`book-image-container ${has_image ? '' : 'backgroundgray'}`}>
         <img
           src={image_url}
           className={has_image ? 'book-image' : 'default-image'}
