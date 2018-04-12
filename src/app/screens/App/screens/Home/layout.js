@@ -18,6 +18,12 @@ export default function Home(props) {
 }
 
 Home.propTypes = {
-  books: PropTypes.arrayOf(PropTypes.object).isRequired,
+  books: PropTypes.arrayOf(
+    PropTypes.shape({
+      image_url: PropTypes.string,
+      title: PropTypes.string.isRequired,
+      author: PropTypes.string.isRequired
+    })
+  ).isRequired,
   onChange: PropTypes.func.isRequired
 };

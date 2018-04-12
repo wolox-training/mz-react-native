@@ -12,5 +12,11 @@ export default function BookList(props) {
 }
 
 BookList.propTypes = {
-  books: PropTypes.arrayOf(PropTypes.object).isRequired
+  books: PropTypes.arrayOf(
+    PropTypes.shape({
+      image_url: PropTypes.string,
+      title: PropTypes.string.isRequired,
+      author: PropTypes.string.isRequired
+    })
+  ).isRequired
 };
