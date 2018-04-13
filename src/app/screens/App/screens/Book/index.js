@@ -1,21 +1,14 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import books from '../../../../../data/books.json';
-import { GO_BACK } from './strings';
-import './styles.css';
+import Book from './layout';
 
-class Book extends Component {
+class BookContainer extends Component {
   render() {
     const bookID = parseInt(this.props.match.params.id, 10);
     const book = books.find(book => book.id === bookID);
 
-    return (
-      <div className="book">
-        <Link to={`/dashboard`}>{GO_BACK}</Link>
-        <h1>{book.title}</h1>
-      </div>
-    );
+    return <Book book={book} />;
   }
 }
 
-export default Book;
+export default BookContainer;
