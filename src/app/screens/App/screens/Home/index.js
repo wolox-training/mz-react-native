@@ -1,14 +1,18 @@
 import React, { Component } from 'react';
 import books from '../../../../../data/books.json';
 import Home from './layout';
+import filterOptions, { defaultFilterOption } from './filterOptions';
 
 class HomeContainer extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      filteredBooks: books
-    };
+    this.handleSearch = this.handleSearch.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
+    this.state = {
+      filteredBooks: books,
+      filterField: defaultFilterOption,
+      searchText: ''
+    };
   }
 
   handleInputChange(event) {
@@ -21,10 +25,28 @@ class HomeContainer extends Component {
     });
   }
 
+  handleSearch() {
+    const filterFields =
+      this.state.filterField === defaultFilterOption
+        ? filterOptions.map(filterOption => filterOption.value)
+        : [this.state.filterField];
+    const filteredBooks = books.filter(book =>
+      filterFields.some(filterField => {
+        const bookProperty = book[filterField];
+        const lowerCaseBookProperty = bookProperty.toLowerCase();
+        const lowerCaseSearchedText = this.state.searchText.toLowerCase();
+        return lowerCaseBookProperty.search(lowerCaseSearchedText) !== -1;
+      })
+    );
+
+    this.setState({ filteredBooks });
+  }
+
   render() {
     return (
       <Home
         onChange={this.handleInputChange}
+        onSearch={this.handleSearch}
         books={this.state.filteredBooks}
       />
     );

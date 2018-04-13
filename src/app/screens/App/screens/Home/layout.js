@@ -10,7 +10,7 @@ export default function Home(props) {
     <div className="home">
       <div className="filters-container">
         <FilterSelect onChange={props.onChange} />
-        <SearchBox onChange={props.onChange} />
+        <SearchBox onChange={props.onChange} onSearch={props.onSearch} />
       </div>
       <BookList books={props.books} />
     </div>
@@ -25,5 +25,6 @@ Home.propTypes = {
       author: PropTypes.string.isRequired
     })
   ).isRequired,
-  onChange: PropTypes.func.isRequired
+  onChange: PropTypes.func.isRequired,
+  onSearch: PropTypes.func.isRequired
 };

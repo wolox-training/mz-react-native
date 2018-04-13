@@ -14,11 +14,17 @@ export default function SearchBox(props) {
         placeholder={SEARCH}
         className="search"
       />
-      <img src={Icon} alt={SEARCH_BUTTON_ALT_TEXT} className="search-image" />
+      <img
+        src={Icon}
+        alt={SEARCH_BUTTON_ALT_TEXT}
+        className="search-image"
+        onClick={props.onSearch}
+      />
     </div>
   );
 }
 
 SearchBox.propTypes = {
-  onChange: PropTypes.func.isRequired
+  onChange: PropTypes.func.isRequired,
+  onSearch: PropTypes.func.isRequired
 };
