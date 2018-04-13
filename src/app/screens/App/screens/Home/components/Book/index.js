@@ -32,8 +32,12 @@ export default function Book(props) {
 
 Book.propTypes = {
   book: PropTypes.shape({
-    image_url: PropTypes.string,
+    id: PropTypes.number.isRequired,
+    author: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
-    author: PropTypes.string.isRequired
-  })
+    genre: PropTypes.string,
+    publisher: PropTypes.string,
+    year: PropTypes.string,
+    image_url: PropTypes.string
+  }).isRequired
 };
