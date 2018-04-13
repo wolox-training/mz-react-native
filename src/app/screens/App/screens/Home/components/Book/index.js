@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { BOOK_COVER_ALT_TEXT } from '../../strings';
 import './styles.css';
 import defaultBookImage from '../../../../../../../assets/ASSETS/default_book.svg';
@@ -10,13 +11,19 @@ export default function Book(props) {
 
   return (
     <div className="book">
-      <div className={`book-image-container ${has_image ? '' : 'backgroundgray'}`}>
-        <img
-          src={image_url}
-          className={has_image ? 'book-image' : 'default-image'}
-          alt={BOOK_COVER_ALT_TEXT}
-        />
-      </div>
+      <Link to={`/books/${props.book.id}`}>
+        <div
+          className={`book-image-container ${
+            has_image ? '' : 'backgroundgray'
+          }`}
+        >
+          <img
+            src={image_url}
+            className={has_image ? 'book-image' : 'default-image'}
+            alt={BOOK_COVER_ALT_TEXT}
+          />
+        </div>
+      </Link>
       <span className="book-title">{props.book.title}</span>
       <span className="book-author">{props.book.author}</span>
     </div>
