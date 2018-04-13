@@ -1,10 +1,9 @@
-import { AUTHOR, TITLE, ALL } from './strings';
+import { AUTHOR, TITLE } from './strings';
 
 export const defaultFilterOption = 'everything';
 const filterOptions = [
   { value: 'author', text: AUTHOR },
-  { value: 'title', text: TITLE },
-  { value: defaultFilterOption, text: ALL }
+  { value: 'title', text: TITLE }
 ];
 
 export default filterOptions;
