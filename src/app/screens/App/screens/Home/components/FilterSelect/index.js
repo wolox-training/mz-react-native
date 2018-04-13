@@ -1,5 +1,5 @@
 import React from 'react';
-import { AUTHOR, TITLE, SELECT_FILTER } from '../../strings';
+import { AUTHOR, TITLE, SELECT_FILTER, ALL } from '../../strings';
 import './styles.css';
 import PropTypes from 'prop-types';
 
@@ -16,6 +16,7 @@ export default function FilterSelect(props) {
       </option>
       <option value="author">{AUTHOR}</option>
       <option value="title">{TITLE}</option>
+      <option value="everything">{ALL}</option>
     </select>
   );
 }
