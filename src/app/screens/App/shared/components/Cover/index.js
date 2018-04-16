@@ -27,5 +27,5 @@ export default function Cover(props) {
 
 Cover.propTypes = {
   image: PropTypes.string,
-  size: PropTypes.oneOf(['small', 'big']).isRequired
+  size: PropTypes.oneOf(['small', 'big', 'suggestion']).isRequired
 };

@@ -14,6 +14,11 @@
     height: 272px;
     width: 191px;
   }
+
+  &.suggestion {
+    height: 124px;
+    width: 87px;
+  }
 }
 
 .default-image {
@@ -25,6 +30,11 @@
   &.big {
     height: 111px;
     width: 111px;
+  }
+
+  &.suggestion {
+    height: 50px;
+    width: 50px;
   }
 }
 
