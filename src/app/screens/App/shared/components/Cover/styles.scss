@@ -1,20 +1,35 @@
 @import '../../../../../constants/colors';
-
-.backgroundgray {
-  background: $alto;
-}
-
 .cover-container {
-  height: 182px;
-  width: 128px;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-shrink: 0;
+
+  &.small {
+    height: 182px;
+    width: 128px;
+  }
+
+  &.big {
+    height: 272px;
+    width: 191px;
+  }
 }
 
 .default-image {
-  width: 69px;
-  height: 69px;
+  &.small {
+    height: 75px;
+    width: 75px;
+  }
+
+  &.big {
+    height: 111px;
+    width: 111px;
+  }
+}
+
+.backgroundgray {
+  background: $alto;
 }
 
 .book-image {
