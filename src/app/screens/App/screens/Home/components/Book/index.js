@@ -8,7 +8,7 @@ export default function Book(props) {
   return (
     <div className="book">
       <Link to={`/books/${props.book.id}`}>
-        <Cover image={props.book.image_url} />
+        <Cover image={props.book.image_url} size="small" />
       </Link>
       <span className="book-title">{props.book.title}</span>
       <span className="book-author">{props.book.author}</span>

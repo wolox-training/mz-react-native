@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { RENT, LOREM_IPSUM } from '../../strings';
+import Cover from '../../../../shared/components/Cover';
 import './styles.css';
 
 class BookDetails extends Component {
   render() {
     return (
       <div className="book-container">
-        <img src={this.props.book.image_url} className="book-image" />
+        <Cover image={this.props.book.image_url} size="big" />
         <div className="book-details">
           <span className="title">{this.props.book.title}</span>
           <span className="author"> {this.props.book.author}</span>
