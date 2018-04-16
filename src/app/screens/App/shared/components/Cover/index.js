@@ -19,7 +19,11 @@ export default function Cover(props) {
   );
 }
 
+Cover.defaultProps = {
+  size: 'small'
+};
+
 Cover.propTypes = {
   image: PropTypes.string,
-  size: PropTypes.string.isRequired
+  size: PropTypes.string
 };
