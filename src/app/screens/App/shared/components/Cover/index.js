@@ -9,23 +9,21 @@ export default function Cover(props) {
   const image_url = props.image || defaultBookImage;
 
   return (
-    <div
-      className={`cover-container ${has_image ? '' : 'backgroundgray'} ${
-        props.size
-      }`}
-    >
+    <div className={`cover-container ${has_image ? '' : 'backgroundgray'} ${props.size}`}>
       <img
+        className={`${has_image ? 'book-image' : 'default-image'} ${props.size}`}
         src={image_url}
-        className={`${has_image ? 'book-image' : 'default-image'} ${
-          props.size
-        }`}
         alt={BOOK_COVER_ALT_TEXT}
       />
     </div>
   );
 }
 
+Cover.defaultProps = {
+  size: 'small'
+};
+
 Cover.propTypes = {
   image: PropTypes.string,
-  size: PropTypes.oneOf(['small', 'big', 'suggestion']).isRequired
+  size: PropTypes.string
 };
