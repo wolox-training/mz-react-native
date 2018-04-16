@@ -9,6 +9,8 @@
 
 .book-container {
   display: flex;
+  width: 810px;
+  margin: 47px auto 0;
 
   .book-image {
     max-width: 191px;
@@ -42,18 +44,25 @@
 
     .genre {
       @extend %small-text;
-      margin-bottom: 114px;
+      margin-bottom: 13px;
+    }
+
+    .desc {
+      font-family: Roboto-Regular;
+      font-size: 14px;
+      color: $soft-bold-gray;
+      line-height: 19px;
     }
 
     .rent-button {
-      background: #00adee;
+      background: $cerulean;
       width: 192px;
       height: 38px;
       font-family: Roboto-Bold;
       font-weight: bold;
       font-size: 20px;
-      color: #ffffff;
-      justify-self: self-end;
+      color: $white;
+      margin-top: auto;
     }
   }
 }
