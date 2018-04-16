@@ -1,4 +1,5 @@
 import React from 'react';
+import { PROFILE_IMAGE_ALT_TEXT } from '../../strings';
 import './styles.css';
 import PropTypes from 'prop-types';
 import profileImage from '../../../../../../../assets/ASSETS/profile-pic.jpg';
@@ -6,7 +7,7 @@ import profileImage from '../../../../../../../assets/ASSETS/profile-pic.jpg';
 export default function Comment(props) {
   return (
     <div className="comment-container">
-      <img src={props.image} className="comment-image" />
+      <img src={props.image} className="comment-image" alt={PROFILE_IMAGE_ALT_TEXT} />
       <div className="comment-info">
         <span className="comment-name">{props.name}</span>
         <span className="comment-date">{props.date}</span>
