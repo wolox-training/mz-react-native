@@ -5,3 +5,5 @@ export const LOREM_IPSUM =
 export const SUGGESTIONS = 'Sugerencias';
 export const COMMENTS = 'Comentarios';
 export const PROFILE_IMAGE_ALT_TEXT = 'Foto de perfil';
+export const ADD_COMMENT = 'Agregar comentario';
+export const SEND_COMMENT = 'Enviar';
