@@ -1,4 +1,59 @@
-.book {
+@import '../../../../../../constants/colors';
+
+%small-text {
+  font-family: Roboto-Regular;
+  font-size: 16px;
+  color: $tundora;
+  letter-spacing: 0px;
+}
+
+.book-container {
   display: flex;
-  flex-direction: column;
+
+  .book-image {
+    max-width: 191px;
+    max-height: 272px;
+    margin-right: 21px;
+  }
+
+  .book-details {
+    display: flex;
+    flex-direction: column;
+
+    .title {
+      font-family: Roboto-Bold;
+      font-size: 20px;
+      letter-spacing: 0px;
+      line-height: 19px;
+      text-align: left;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .author {
+      @extend %small-text;
+      margin-bottom: 22px;
+    }
+
+    .year {
+      @extend %small-text;
+      margin-bottom: 8px;
+    }
+
+    .genre {
+      @extend %small-text;
+      margin-bottom: 114px;
+    }
+
+    .rent-button {
+      background: #00adee;
+      width: 192px;
+      height: 38px;
+      font-family: Roboto-Bold;
+      font-weight: bold;
+      font-size: 20px;
+      color: #ffffff;
+      justify-self: self-end;
+    }
+  }
 }

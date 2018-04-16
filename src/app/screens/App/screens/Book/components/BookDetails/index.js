@@ -1,15 +1,20 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { RENT } from '../../strings';
 import './styles.css';
 
 class BookDetails extends Component {
   render() {
     return (
-      <div className="book">
-        <span>{this.props.book.title}</span>
-        <span>{this.props.book.author}</span>
-        <span>{this.props.book.year}</span>
-        <span>{this.props.book.genre}</span>
+      <div className="book-container">
+        <img src={this.props.book.image_url} className="book-image" />
+        <div className="book-details">
+          <span className="title">{this.props.book.title}</span>
+          <span className="author"> {this.props.book.author}</span>
+          <span className="year">{this.props.book.year}</span>
+          <span className="genre">{this.props.book.genre}</span>
+          <button className="rent-button">{RENT}</button>
+        </div>
       </div>
     );
   }
