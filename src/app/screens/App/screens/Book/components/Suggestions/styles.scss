@@ -9,15 +9,6 @@
   }
 }
 
-.suggestions-title {
-  font-family: Roboto-Bold;
-  font-size: 20px;
-  color: #a5cd39;
-  line-height: 19px;
-  font-weight: bold;
-  margin-bottom: 16px;
-}
-
 .suggestions-container {
   @extend %separated;
   width: 100%;

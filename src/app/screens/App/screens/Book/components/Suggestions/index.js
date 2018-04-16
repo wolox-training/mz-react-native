@@ -6,7 +6,7 @@ import './styles.css';
 export default function Suggestions(props) {
   return (
     <div className="suggestions-container">
-      <h1 className="suggestions-title">{SUGGESTIONS}</h1>
+      <h1 className="subtitle">{SUGGESTIONS}</h1>
       <div className="suggestions">
         <Cover size="suggestion" />
         <Cover size="suggestion" />
