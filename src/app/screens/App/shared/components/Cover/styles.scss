@@ -1,0 +1,23 @@
+@import '../../../../../constants/colors';
+
+.backgroundgray {
+  background: $alto;
+}
+
+.cover-container {
+  height: 182px;
+  width: 128px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.default-image {
+  width: 69px;
+  height: 69px;
+}
+
+.book-image {
+  max-width: 100%;
+  max-height: 100%;
+}
