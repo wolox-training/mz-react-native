@@ -22,6 +22,7 @@ Book.propTypes = {
     author: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     genre: PropTypes.string,
+    desc: PropTypes.string,
     publisher: PropTypes.string,
     year: PropTypes.string,
     image_url: PropTypes.string
