@@ -8,6 +8,7 @@ export default function Comments(props) {
     <div className="comments-container">
       <h1 className="subtitle">{COMMENTS}</h1>
       <Comment />
+      <Comment />
     </div>
   );
 }
