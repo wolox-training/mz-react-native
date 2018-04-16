@@ -12,15 +12,10 @@
   width: 810px;
   margin: 47px auto 0;
 
-  .book-image {
-    max-width: 191px;
-    max-height: 272px;
-    margin-right: 21px;
-  }
-
   .book-details {
     display: flex;
     flex-direction: column;
+    margin-left: 21px;
 
     .title {
       font-family: Roboto-Bold;
