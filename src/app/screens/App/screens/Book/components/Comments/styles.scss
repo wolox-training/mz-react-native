@@ -1,0 +1,9 @@
+@import '../../../../../../constants/colors';
+@import '../../shared/styles';
+
+.comments-container {
+  @extend %separated;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}

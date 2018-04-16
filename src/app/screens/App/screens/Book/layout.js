@@ -4,6 +4,7 @@ import { GO_BACK } from './strings';
 import PropTypes from 'prop-types';
 import BookDetails from './components/BookDetails';
 import Suggestions from './components/Suggestions';
+import Comments from './components/Comments';
 import './styles.css';
 
 export default function Book(props) {
@@ -15,6 +16,7 @@ export default function Book(props) {
       <div className="book-info-container">
         <BookDetails book={props.book} />
         <Suggestions />
+        <Comments />
       </div>
     </div>
   );
