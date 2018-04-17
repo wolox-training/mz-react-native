@@ -10,13 +10,7 @@ class HomeContainer extends Component {
     searchText: ''
   };
 
-  constructor(props) {
-    super(props);
-    this.handleSearch = this.handleSearch.bind(this);
-    this.handleInputChange = this.handleInputChange.bind(this);
-  }
-
-  handleInputChange(event) {
+  handleInputChange = event => {
     const target = event.target;
     const value = target.value;
     const name = target.name;
@@ -24,9 +18,9 @@ class HomeContainer extends Component {
     this.setState({
       [name]: value
     });
-  }
+  };
 
-  handleSearch() {
+  handleSearch = () => {
     const filterFields =
       this.state.filterField === defaultFilterOption
         ? filterOptions.map(filterOption => filterOption.value)
@@ -41,7 +35,7 @@ class HomeContainer extends Component {
     );
 
     this.setState({ filteredBooks });
-  }
+  };
 
   render() {
     return (
