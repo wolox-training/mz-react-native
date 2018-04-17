@@ -1,0 +1,17 @@
+@import '../../../../../../constants/colors';
+@import '../../shared/styles';
+
+.suggestions {
+  display: flex;
+
+  .cover-container {
+    margin-left: 54px;
+  }
+}
+
+.suggestions-container {
+  @extend %separated;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}

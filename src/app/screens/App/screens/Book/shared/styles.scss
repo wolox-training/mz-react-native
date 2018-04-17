@@ -1,0 +1,18 @@
+%separated {
+  &:before {
+    content: '';
+    background-color: $cerulean;
+    height: 3px;
+    width: 100%;
+    margin: 31px 4px;
+  }
+}
+
+.subtitle {
+  font-family: Roboto-Bold;
+  font-size: 20px;
+  color: #a5cd39;
+  line-height: 19px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}

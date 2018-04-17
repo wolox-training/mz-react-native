@@ -1,0 +1,25 @@
+@import '../../../../../../constants/colors';
+
+.comment-name {
+  font-family: Roboto-bold;
+  font-size: 14px;
+  color: $tundora;
+  letter-spacing: 0px;
+  line-height: 19px;
+  font-weight: bold;
+}
+
+.comment-date {
+  font-family: Roboto-Regular;
+  font-size: 12px;
+  color: $tundora;
+  letter-spacing: 0px;
+  line-height: 19px;
+}
+
+.comment-content {
+  font-family: Roboto-Regular;
+  font-size: 14px;
+  color: $tundora;
+  line-height: 19px;
+}
