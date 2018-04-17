@@ -4,15 +4,16 @@ import Home from './layout';
 import filterOptions, { defaultFilterOption } from './filterOptions';
 
 class HomeContainer extends Component {
+  state = {
+    filteredBooks: books,
+    filterField: defaultFilterOption,
+    searchText: ''
+  };
+
   constructor(props) {
     super(props);
     this.handleSearch = this.handleSearch.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
-    this.state = {
-      filteredBooks: books,
-      filterField: defaultFilterOption,
-      searchText: ''
-    };
   }
 
   handleInputChange(event) {
