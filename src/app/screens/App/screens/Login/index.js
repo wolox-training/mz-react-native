@@ -35,7 +35,7 @@ class LoginContainer extends Component {
     if (emailError || passwordError) {
       this.setState({ emailError, passwordError });
     } else {
-      localStorage.setItem('user', email);
+      localStorage.setItem('currentUser', email);
       this.props.history.push('/dashboard');
     }
   };

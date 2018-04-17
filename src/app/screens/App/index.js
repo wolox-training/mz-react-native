@@ -4,6 +4,7 @@ import HomeContainer from './screens/Home';
 import Book from './screens/Book';
 import Landing from './screens/Landing';
 import Login from './screens/Login';
+import PrivateRoute from './components/PrivateRoute';
 
 class App extends Component {
   render() {
@@ -11,8 +12,8 @@ class App extends Component {
       <Switch>
         <Route exact path="/" component={Landing} />
         <Route exact path="/login" component={Login} />
-        <Route exact path="/dashboard" component={HomeContainer} />
-        <Route path="/books/:id" component={Book} />
+        <PrivateRoute exact path="/dashboard" component={HomeContainer} />
+        <PrivateRoute path="/books/:id" component={Book} />
       </Switch>
     );
   }
