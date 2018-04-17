@@ -1,16 +1,50 @@
-import React from 'react';
-import { LOGIN, EMAIL, PASSWORD } from './strings';
-import './styles.css';
+import React, { Component } from 'react';
+import Login from './layout';
+import { EMAIL_REGEX, HAS_LETTER_REGEX, HAS_NUMBER_REGEX } from '../../../../constants/regex';
 
-export default function Login() {
-  return (
-    <div className="login">
-      <h1 className="title">{LOGIN}</h1>
-      <label className="label">{EMAIL}</label>
-      <input type="email" className="input" />
-      <label className="label">{PASSWORD}</label>
-      <input type="password" className="input" />
-      <button className="login-button">{LOGIN}</button>
-    </div>
-  );
+class LoginContainer extends Component {
+  state = {
+    emailError: false,
+    passwordError: false,
+    email: '',
+    password: ''
+  };
+
+  handleInputChange = event => {
+    const target = event.target;
+    const value = target.value;
+    const name = target.name;
+
+    this.setState({
+      [name]: value
+    });
+  };
+
+  handleSubmit = e => {
+    e.preventDefault();
+    const email = this.state.email;
+    const password = this.state.password;
+
+    const emailError = !EMAIL_REGEX.test(email);
+    const passwordError =
+      password.length < 8 ||
+      password.length > 52 ||
+      !HAS_LETTER_REGEX.test(password) ||
+      !HAS_NUMBER_REGEX.test(password);
+
+    this.setState({ emailError, passwordError });
+  };
+
+  render() {
+    return (
+      <Login
+        onInputChange={this.handleInputChange}
+        onSubmit={this.handleSubmit}
+        emailError={this.state.emailError}
+        passwordError={this.state.passwordError}
+      />
+    );
+  }
 }
+
+export default LoginContainer;
