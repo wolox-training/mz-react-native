@@ -32,7 +32,12 @@ class LoginContainer extends Component {
       !HAS_LETTER_REGEX.test(password) ||
       !HAS_NUMBER_REGEX.test(password);
 
-    this.setState({ emailError, passwordError });
+    if (emailError || passwordError) {
+      this.setState({ emailError, passwordError });
+    } else {
+      localStorage.setItem('user', email);
+      this.props.history.push('/dashboard');
+    }
   };
 
   render() {
