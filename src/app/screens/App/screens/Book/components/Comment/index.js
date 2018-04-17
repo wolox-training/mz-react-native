@@ -14,7 +14,6 @@ export default function Comment(props) {
 }
 
 Comment.propTypes = {
-  image: PropTypes.string,
   name: PropTypes.string,
   date: PropTypes.string,
   content: PropTypes.string
