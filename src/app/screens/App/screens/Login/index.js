@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import Login from './layout';
 import { SESSION_URL } from '../../../../constants/urls';
 import { WRONG_PASSWORD } from './strings';
@@ -45,19 +46,13 @@ class LoginContainer extends Component {
     const email = this.state.email;
     const password = this.state.password;
 
-    const response = await fetch(SESSION_URL, {
-      method: 'POST',
-      body: JSON.stringify({ email, password }),
-      headers: new Headers({
-        'Content-Type': 'application/json'
+    axios
+      .post(SESSION_URL, { email, password })
+      .then(response => {
+        localStorage.setItem('currentUser', email);
+        this.props.history.push('/dashboard');
       })
-    });
-    if (response.ok) {
-      localStorage.setItem('currentUser', email);
-      this.props.history.push('/dashboard');
-    } else {
-      this.setState({ passwordError: WRONG_PASSWORD });
-    }
+      .catch(error => this.setState({ passwordError: WRONG_PASSWORD }));
   };
 
   render() {
