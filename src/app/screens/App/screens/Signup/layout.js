@@ -16,7 +16,7 @@ export default function Signup(props) {
         name="email"
         onChange={props.onInputChange}
       />
-      {props.emailError && <span className="error-message">{props.emailError}</span>}
+      <span className="error-message">{props.emailError}</span>
       <label className="label" htmlFor="password">
         {PASSWORD}
       </label>
@@ -27,7 +27,7 @@ export default function Signup(props) {
         name="password"
         onChange={props.onInputChange}
       />
-      {props.passwordError && <span className="error-message">{props.passwordError}</span>}
+      <span className="error-message">{props.passwordError}</span>
       <label className="label" htmlFor="passwordConfirmation">
         {PASSWORD_CONFIRMATION}
       </label>
@@ -38,7 +38,7 @@ export default function Signup(props) {
         name="passwordConfirmation"
         onChange={props.onInputChange}
       />
-      {props.passwordError && <span className="error-message">{props.passwordError}</span>}
+      <span className="error-message">{props.passwordConfirmationError}</span>
       <label className="label" htmlFor="firstName">
         {FIRST_NAME}
       </label>
@@ -49,7 +49,7 @@ export default function Signup(props) {
         name="firstName"
         onChange={props.onInputChange}
       />
-      {props.passwordError && <span className="error-message">{props.passwordError}</span>}
+      <span className="error-message">{props.passwordError}</span>
       <label className="label" htmlFor="lastName">
         {LAST_NAME}
       </label>
@@ -60,8 +60,8 @@ export default function Signup(props) {
         name="lastName"
         onChange={props.onInputChange}
       />
-      {props.passwordError && <span className="error-message">{props.passwordError}</span>}
-      <input type="submit" className="login-button" value={SIGNUP} onClick={props.onSubmit} />
+      <span className="error-message">{props.passwordError}</span>
+      <input type="submit" className="login-button" value={SIGNUP} />
     </form>
   );
 }
