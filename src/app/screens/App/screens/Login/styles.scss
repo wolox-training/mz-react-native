@@ -38,7 +38,7 @@
   margin-bottom: 20px;
 
   &.error {
-    border: 1px solid #ff233e;
+    border: 1px solid $torch-red;
   }
 }
 
@@ -57,7 +57,7 @@
 .error-message {
   font-family: Roboto-Regular;
   font-size: 10px;
-  color: #ff233e;
+  color: $torch-red;
   letter-spacing: 0px;
   line-height: 19px;
   align-self: flex-start;
