@@ -8,10 +8,10 @@ export default function Landing() {
   return (
     <div className="landing">
       <img src={wBooksLogo} alt={LOGO_ALT_TEXT} className="wbooks-logo" />
-      <Link to="/signup">
+      <Link to="/login">
         <button className="landing-button">{LOGIN_WITH_GOOGLE}</button>
       </Link>
-      <Link to="/login">
+      <Link to="/signup">
         <button className="landing-button">{SIGN_UP}</button>
       </Link>
     </div>
