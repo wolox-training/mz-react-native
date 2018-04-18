@@ -30,7 +30,7 @@ export default function Login(props) {
         onChange={props.onInputChange}
       />
       {props.passwordError && <span className="error-message">{props.passwordError}</span>}
-      <input type="submit" className="login-button" value={LOGIN} onClick={props.onSubmit} />
+      <input type="submit" className="login-button" value={LOGIN} />
     </form>
   );
 }
