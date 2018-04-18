@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Login from './layout';
-import { EMAIL_REGEX, HAS_LETTER_REGEX, HAS_NUMBER_REGEX } from '../../../../constants/regex';
+import { EMAIL_REGEX, HAS_NUMBER_REGEX } from '../../../../constants/regex';
+import { SESSION_URL } from '../../../../constants/urls';
 
 class LoginContainer extends Component {
   state = {
@@ -27,16 +28,30 @@ class LoginContainer extends Component {
 
     const emailError = !EMAIL_REGEX.test(email);
     const passwordError =
-      password.length < 8 ||
-      password.length > 52 ||
-      !HAS_LETTER_REGEX.test(password) ||
-      !HAS_NUMBER_REGEX.test(password);
+      password.length < 8 || password.length > 52 || !HAS_NUMBER_REGEX.test(password);
 
     if (emailError || passwordError) {
       this.setState({ emailError, passwordError });
     } else {
+      this.requestAuthentication().then(() => this.props.history.push('/dashboard'));
+    }
+  };
+
+  requestAuthentication = async () => {
+    const email = this.state.email;
+    const password = this.state.password;
+
+    const response = await fetch(SESSION_URL, {
+      method: 'POST',
+      body: JSON.stringify({ email, password }),
+      headers: new Headers({
+        'Content-Type': 'application/json'
+      })
+    });
+    if (response.ok) {
       localStorage.setItem('currentUser', email);
-      this.props.history.push('/dashboard');
+    } else {
+      this.setState({ passwordError: true });
     }
   };
 
