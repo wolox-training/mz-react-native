@@ -34,7 +34,7 @@ export default function Signup(props) {
       <input
         required
         type="password"
-        className={`input ${props.passwordError ? 'error' : ''}`}
+        className={`input ${props.passwordConfirmationError ? 'error' : ''}`}
         name="passwordConfirmation"
         onChange={props.onInputChange}
       />
