@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Login from './layout';
 import { EMAIL_REGEX, HAS_NUMBER_REGEX } from '../../../../constants/regex';
 import { SESSION_URL } from '../../../../constants/urls';
+import { EMAIL_ERROR, PASSWORD_ERROR, WRONG_PASSWORD } from './strings';
 
 class LoginContainer extends Component {
   state = {
@@ -26,14 +27,17 @@ class LoginContainer extends Component {
     const email = this.state.email;
     const password = this.state.password;
 
-    const emailError = !EMAIL_REGEX.test(email);
-    const passwordError =
+    const invalidEmail = !EMAIL_REGEX.test(email);
+    const invalidPassword =
       password.length < 8 || password.length > 52 || !HAS_NUMBER_REGEX.test(password);
 
-    if (emailError || passwordError) {
-      this.setState({ emailError, passwordError });
-    } else {
-      this.requestAuthentication().then(() => this.props.history.push('/dashboard'));
+    this.setState({
+      emailError: invalidEmail && EMAIL_ERROR,
+      passwordError: invalidPassword && PASSWORD_ERROR
+    });
+
+    if (!invalidEmail && !invalidPassword) {
+      this.requestAuthentication();
     }
   };
 
@@ -50,8 +54,9 @@ class LoginContainer extends Component {
     });
     if (response.ok) {
       localStorage.setItem('currentUser', email);
+      this.props.history.push('/dashboard');
     } else {
-      this.setState({ passwordError: true });
+      this.setState({ passwordError: WRONG_PASSWORD });
     }
   };
 

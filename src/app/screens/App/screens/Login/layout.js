@@ -1,5 +1,5 @@
 import React from 'react';
-import { LOGIN, EMAIL, PASSWORD, EMAIL_ERROR, PASSWORD_ERROR } from './strings';
+import { LOGIN, EMAIL, PASSWORD } from './strings';
 import './styles.css';
 
 export default function Login(props) {
@@ -16,7 +16,7 @@ export default function Login(props) {
         name="email"
         onChange={props.onInputChange}
       />
-      {props.emailError && <span className="error-message">{EMAIL_ERROR}</span>}
+      {props.emailError && <span className="error-message">{props.emailError}</span>}
       <label className="label" htmlFor="password">
         {PASSWORD}
       </label>
@@ -27,7 +27,7 @@ export default function Login(props) {
         name="password"
         onChange={props.onInputChange}
       />
-      {props.passwordError && <span className="error-message">{PASSWORD_ERROR}</span>}
+      {props.passwordError && <span className="error-message">{props.passwordError}</span>}
       <input type="submit" className="login-button" value={LOGIN} onClick={props.onSubmit} />
     </form>
   );
