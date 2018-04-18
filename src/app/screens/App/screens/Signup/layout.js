@@ -44,7 +44,7 @@ export default function Signup(props) {
       </label>
       <input
         required
-        type="password"
+        type="text"
         className={`input ${props.firstNameError ? 'error' : ''}`}
         name="firstName"
         onChange={props.onInputChange}
@@ -55,7 +55,7 @@ export default function Signup(props) {
       </label>
       <input
         required
-        type="password"
+        type="text"
         className={`input ${props.lastNameError ? 'error' : ''}`}
         name="lastName"
         onChange={props.onInputChange}
