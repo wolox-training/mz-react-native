@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import Login from './layout';
-import { EMAIL_REGEX, HAS_NUMBER_REGEX } from '../../../../constants/regex';
 import { SESSION_URL } from '../../../../constants/urls';
-import { EMAIL_ERROR, PASSWORD_ERROR, WRONG_PASSWORD } from './strings';
+import { WRONG_PASSWORD } from './strings';
+import { EMAIL_ERROR, PASSWORD_ERROR } from '../../shared/strings';
+import { emailIsValid, passwordIsValid } from '../../../../utils/validationUtils';
 
 class LoginContainer extends Component {
   state = {
@@ -27,16 +28,15 @@ class LoginContainer extends Component {
     const email = this.state.email;
     const password = this.state.password;
 
-    const invalidEmail = !EMAIL_REGEX.test(email);
-    const invalidPassword =
-      password.length < 8 || password.length > 52 || !HAS_NUMBER_REGEX.test(password);
+    const validEmail = emailIsValid(email);
+    const validPassword = passwordIsValid(password);
 
     this.setState({
-      emailError: invalidEmail && EMAIL_ERROR, //set either EMAIL_ERROR or false
-      passwordError: invalidPassword && PASSWORD_ERROR
+      emailError: !validEmail && EMAIL_ERROR, //set either EMAIL_ERROR or false
+      passwordError: !validPassword && PASSWORD_ERROR
     });
 
-    if (!invalidEmail && !invalidPassword) {
+    if (validEmail && validPassword) {
       this.requestAuthentication();
     }
   };
