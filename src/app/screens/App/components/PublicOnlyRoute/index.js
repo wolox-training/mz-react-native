@@ -1,10 +1,8 @@
 import React from 'react';
 import CustomRoute from '../CustomRoute';
-
-function isAllowedAccess() {
-  return !localStorage.getItem('currentUser');
-}
+import { hasUserAccess } from '../../../../utils/storageUtils';
+import { negate } from '../../../../utils/negate';
 
 export default ({ ...rest }) => (
-  <CustomRoute {...rest} isAllowedAccess={isAllowedAccess} redirectPath="/dashboard" />
+  <CustomRoute {...rest} isAllowedAccess={negate(hasUserAccess)} redirectPath="/dashboard" />
 );
