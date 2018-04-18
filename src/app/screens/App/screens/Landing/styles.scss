@@ -1,3 +1,5 @@
+@import '../../../../constants/colors';
+
 .landing {
   display: flex;
   flex-direction: column;
@@ -6,16 +8,17 @@
   height: 100vh;
 }
 
-.login-button {
-  background: #e93939;
+.landing-button {
+  background: $cinnabar;
   border-radius: 4px;
   width: 189px;
   height: 44px;
   font-family: Roboto-Regular;
   font-size: 15px;
-  color: #ffffff;
+  color: $white;
   letter-spacing: 0px;
   line-height: 19px;
+  margin-bottom: 20px;
 }
 
 .wbooks-logo {
