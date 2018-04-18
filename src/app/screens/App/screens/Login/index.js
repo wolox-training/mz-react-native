@@ -32,7 +32,7 @@ class LoginContainer extends Component {
       password.length < 8 || password.length > 52 || !HAS_NUMBER_REGEX.test(password);
 
     this.setState({
-      emailError: invalidEmail && EMAIL_ERROR,
+      emailError: invalidEmail && EMAIL_ERROR, //set either EMAIL_ERROR or false
       passwordError: invalidPassword && PASSWORD_ERROR
     });
 
