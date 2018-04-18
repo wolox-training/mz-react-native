@@ -1,0 +1,23 @@
+.landing {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-button {
+  background: #e93939;
+  border-radius: 4px;
+  width: 189px;
+  height: 44px;
+  font-family: Roboto-Regular;
+  font-size: 15px;
+  color: #ffffff;
+  letter-spacing: 0px;
+  line-height: 19px;
+}
+
+.wbooks-logo {
+  margin-bottom: 46px;
+}
