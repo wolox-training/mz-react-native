@@ -1,5 +1,7 @@
 import React from 'react';
-import { LOGIN, EMAIL, PASSWORD } from './strings';
+import { LOGIN } from './strings';
+import { EMAIL, PASSWORD } from '../../shared/strings';
+
 import './styles.css';
 
 export default function Login(props) {

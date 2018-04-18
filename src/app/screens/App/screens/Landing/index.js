@@ -1,6 +1,6 @@
 import React from 'react';
 import wBooksLogo from '../../../../../assets/ASSETS/wbooks_logo.svg';
-import { LOGO_ALT_TEXT, LOGIN_WITH_GOOGLE, SIGN_UP } from '../Home/strings';
+import { LOGO_ALT_TEXT, LOGIN_WITH_GOOGLE, SIGN_UP } from './strings';
 import './styles.css';
 import { Link } from 'react-router-dom';
 
