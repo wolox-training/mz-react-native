@@ -52,7 +52,8 @@ class SignupContainer extends Component {
       validFirstName &&
       validLastNameError
     ) {
-      this.requestAuthentication();
+      //this.requestAuthentication();
+      console.log('Signed up!');
     }
   };
 
