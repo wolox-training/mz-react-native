@@ -1,10 +1,10 @@
 import React from 'react';
 import CustomRoute from '../CustomRoute';
 
-function authFunction() {
+function isAllowedAccess() {
   return !localStorage.getItem('currentUser');
 }
 
 export default ({ ...rest }) => (
-  <CustomRoute {...rest} authFunction={authFunction} redirectPath="/dashboard" />
+  <CustomRoute {...rest} isAllowedAccess={isAllowedAccess} redirectPath="/dashboard" />
 );

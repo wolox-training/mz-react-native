@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 
 import { Redirect, Route } from 'react-router-dom';
 
-const CustomRoute =  ({ component: Component, ...rest, authFunction, redirectPath }) => (
+const CustomRoute =  ({ component: Component, ...rest, isAllowedAccess, redirectPath }) => (
   <Route
     {...rest}
     render={props =>
-      authFunction() ? (
+      isAllowedAccess() ? (
         <Component {...props} />
       ) : (
         <Redirect
@@ -24,6 +24,6 @@ const CustomRoute =  ({ component: Component, ...rest, authFunction, redirectPat
 export default CustomRoute;
 
 CustomRoute.propTypes = {
-  authFunction: PropTypes.func.isRequired,
+  isAllowedAccess: PropTypes.func.isRequired,
   redirectPath: PropTypes.string.isRequired
 };
