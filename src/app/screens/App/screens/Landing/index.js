@@ -1,6 +1,6 @@
 import React from 'react';
 import wBooksLogo from '../../../../../assets/ASSETS/wbooks_logo.svg';
-import { LOGO_ALT_TEXT, LOGIN_WITH_GOOGLE } from '../Home/strings';
+import { LOGO_ALT_TEXT, LOGIN_WITH_GOOGLE, SIGN_UP } from '../Home/strings';
 import './styles.css';
 import { Link } from 'react-router-dom';
 
@@ -12,7 +12,7 @@ export default function Landing() {
         <button className="landing-button">{LOGIN_WITH_GOOGLE}</button>
       </Link>
       <Link to="/login">
-        <button className="landing-button">{LOGIN_WITH_GOOGLE}</button>
+        <button className="landing-button">{SIGN_UP}</button>
       </Link>
     </div>
   );
