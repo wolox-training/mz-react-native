@@ -45,22 +45,22 @@ export default function Signup(props) {
       <input
         required
         type="password"
-        className={`input ${props.passwordError ? 'error' : ''}`}
+        className={`input ${props.firstNameError ? 'error' : ''}`}
         name="firstName"
         onChange={props.onInputChange}
       />
-      <span className="error-message">{props.passwordError}</span>
+      <span className="error-message">{props.firstNameError}</span>
       <label className="label" htmlFor="lastName">
         {LAST_NAME}
       </label>
       <input
         required
         type="password"
-        className={`input ${props.passwordError ? 'error' : ''}`}
+        className={`input ${props.lastNameError ? 'error' : ''}`}
         name="lastName"
         onChange={props.onInputChange}
       />
-      <span className="error-message">{props.passwordError}</span>
+      <span className="error-message">{props.lastNameError}</span>
       <input type="submit" className="login-button" value={SIGNUP} />
     </form>
   );
