@@ -7,7 +7,7 @@ const CustomRoute =  ({ component: Component, ...rest, isAllowedAccess, redirect
   <Route
     {...rest}
     render={props =>
-      isAllowedAccess() ? (
+      isAllowedAccess ? (
         <Component {...props} />
       ) : (
         <Redirect
@@ -24,6 +24,6 @@ const CustomRoute =  ({ component: Component, ...rest, isAllowedAccess, redirect
 export default CustomRoute;
 
 CustomRoute.propTypes = {
-  isAllowedAccess: PropTypes.func.isRequired,
+  isAllowedAccess: PropTypes.bool.isRequired,
   redirectPath: PropTypes.string.isRequired
 };
