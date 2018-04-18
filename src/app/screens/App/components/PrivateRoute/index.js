@@ -1,10 +1,7 @@
 import React from 'react';
 import CustomRoute from '../CustomRoute';
-
-function isAllowedAccess() {
-  return localStorage.getItem('currentUser');
-}
+import { hasUserAccess } from '../../../../utils/storageUtils';
 
 export default ({ ...rest }) => (
-  <CustomRoute {...rest} isAllowedAccess={isAllowedAccess} redirectPath="/login" />
+  <CustomRoute {...rest} isAllowedAccess={hasUserAccess} redirectPath="/login" />
 );
