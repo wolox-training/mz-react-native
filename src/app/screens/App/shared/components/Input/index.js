@@ -1,5 +1,6 @@
 import React from 'react';
 import './styles.css';
+import PropTypes from 'prop-types';
 
 export default function Input(props) {
   return (
@@ -18,3 +19,11 @@ export default function Input(props) {
     </div>
   );
 }
+
+Input.propTypes = {
+  name: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  error: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]).isRequired,
+  onInputChange: PropTypes.func.isRequired,
+  label: PropTypes.string.isRequired
+};
