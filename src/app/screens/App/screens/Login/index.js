@@ -25,11 +25,8 @@ class LoginContainer extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    const email = this.state.email;
-    const password = this.state.password;
-
-    const validEmail = emailIsValid(email);
-    const validPassword = passwordIsValid(password);
+    const validEmail = emailIsValid(this.state.email);
+    const validPassword = passwordIsValid(this.state.password);
 
     this.setState({
       emailError: !validEmail && EMAIL_ERROR, //set either EMAIL_ERROR or false
@@ -39,7 +36,7 @@ class LoginContainer extends Component {
     if (validEmail && validPassword) {
       logIn(this.state.email, this.state.password)
         .then(response => {
-          localStorage.setItem('currentUser', email);
+          localStorage.setItem('currentUser', this.state.email);
           this.props.history.push('/dashboard');
         })
         .catch(error => this.setState({ passwordError: WRONG_PASSWORD }));

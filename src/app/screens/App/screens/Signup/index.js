@@ -25,17 +25,11 @@ class SignupContainer extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    const email = this.state.email;
-    const password = this.state.password;
-    const passwordConfirmation = this.state.passwordConfirmation;
-    const firstName = this.state.firstName;
-    const lastName = this.state.lastName;
-
-    const validEmail = emailIsValid(email);
-    const validPassword = passwordIsValid(password);
-    const validPasswordConfirmation = password === passwordConfirmation;
-    const validFirstName = hasLettersOnly(firstName);
-    const validLastNameError = hasLettersOnly(lastName);
+    const validEmail = emailIsValid(this.state.email);
+    const validPassword = passwordIsValid(this.state.password);
+    const validPasswordConfirmation = this.state.password === this.state.passwordConfirmation;
+    const validFirstName = hasLettersOnly(this.state.firstName);
+    const validLastNameError = hasLettersOnly(this.state.lastName);
 
     this.setState({
       emailError: !validEmail && EMAIL_ERROR, //set either EMAIL_ERROR or false
