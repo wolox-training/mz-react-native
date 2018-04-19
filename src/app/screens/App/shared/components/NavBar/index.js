@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { LOGO_ALT_TEXT } from '../../strings';
 import ProfileImage from '../ProfileImage';
 import './styles.css';
@@ -10,7 +11,9 @@ export default function NavBar(props) {
   return (
     <div>
       <nav className="navbar">
-        <img src={wBooksLogo} className="navbar-logo" alt={LOGO_ALT_TEXT} />
+        <Link to="/dashboard">
+          <img src={wBooksLogo} className="navbar-logo" alt={LOGO_ALT_TEXT} />
+        </Link>
         <div className="menu">
           <img src={notifications} />
           <img src={add_book} />
