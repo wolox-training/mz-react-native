@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
 import Signup from './layout';
 import { EMAIL_ERROR, PASSWORD_ERROR } from '../../shared/strings';
-import { PASSWORD_CONFIRMATION_ERROR, FIRST_NAME_ERROR, LAST_NAME_ERROR } from './strings';
+import {
+  PASSWORD_CONFIRMATION_ERROR,
+  FIRST_NAME_ERROR,
+  LAST_NAME_ERROR,
+  EMAIL_TAKEN
+} from './strings';
 import { emailIsValid, passwordIsValid, hasLettersOnly } from '../../../../utils/validationUtils';
 import { signUp } from '../../../../../service/service';
 
@@ -57,7 +62,7 @@ class SignupContainer extends Component {
         .then(response => {
           this.props.history.push('/login');
         })
-        .catch(error => this.setState({ emailError: 'Email has already been taken' }));
+        .catch(error => this.setState({ emailError: EMAIL_TAKEN }));
     }
   };
 
