@@ -3,6 +3,7 @@ import Signup from './layout';
 import { EMAIL_ERROR, PASSWORD_ERROR } from '../../shared/strings';
 import { PASSWORD_CONFIRMATION_ERROR, FIRST_NAME_ERROR, LAST_NAME_ERROR } from './strings';
 import { emailIsValid, passwordIsValid, hasLettersOnly } from '../../../../utils/validationUtils';
+import { signUp } from '../../../../../service/service';
 
 class SignupContainer extends Component {
   state = {
@@ -46,8 +47,17 @@ class SignupContainer extends Component {
       validFirstName &&
       validLastNameError
     ) {
-      //this.requestAuthentication();
-      console.log('Signed up!');
+      signUp(
+        this.state.email,
+        this.state.password,
+        this.state.passwordConfirmation,
+        this.state.firstName,
+        this.state.lastName
+      )
+        .then(response => {
+          this.props.history.push('/login');
+        })
+        .catch(error => this.setState({ emailError: 'Email has already been taken' }));
     }
   };
 
