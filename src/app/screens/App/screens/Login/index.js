@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import Login from './layout';
-import { SESSION_URL } from '../../../../constants/urls';
 import { WRONG_PASSWORD } from './strings';
 import { EMAIL_ERROR, PASSWORD_ERROR } from '../../shared/strings';
 import { emailIsValid, passwordIsValid } from '../../../../utils/validationUtils';
+import { logIn } from '../../../../../service/service';
 
 class LoginContainer extends Component {
   state = {
@@ -38,21 +37,13 @@ class LoginContainer extends Component {
     });
 
     if (validEmail && validPassword) {
-      this.requestAuthentication();
+      logIn(this.state.email, this.state.password)
+        .then(response => {
+          localStorage.setItem('currentUser', email);
+          this.props.history.push('/dashboard');
+        })
+        .catch(error => this.setState({ passwordError: WRONG_PASSWORD }));
     }
-  };
-
-  requestAuthentication = async () => {
-    const email = this.state.email;
-    const password = this.state.password;
-
-    axios
-      .post(SESSION_URL, { email, password })
-      .then(response => {
-        localStorage.setItem('currentUser', email);
-        this.props.history.push('/dashboard');
-      })
-      .catch(error => this.setState({ passwordError: WRONG_PASSWORD }));
   };
 
   render() {
