@@ -1,0 +1,39 @@
+@import '../../../../../app';
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+
+  .label {
+    font-family: Roboto-Regular;
+    font-size: 12px;
+    color: $tundora;
+    letter-spacing: 0px;
+    line-height: 19px;
+    margin-bottom: 10px;
+    align-self: flex-start;
+  }
+
+  .input {
+    @extend %input-styles;
+
+    width: 541px;
+    font-size: 14px;
+    line-height: 19px;
+    margin-bottom: 20px;
+
+    &.error {
+      border: 1px solid $torch-red;
+    }
+  }
+
+  .error-message {
+    font-family: Roboto-Regular;
+    font-size: 10px;
+    color: $torch-red;
+    letter-spacing: 0px;
+    line-height: 19px;
+    align-self: flex-start;
+    margin-left: 80px;
+  }
+}
