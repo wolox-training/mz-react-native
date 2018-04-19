@@ -4,7 +4,7 @@ import { EMAIL, PASSWORD } from '../../shared/strings';
 
 export default function Signup(props) {
   return (
-    <form className="login" onSubmit={props.onSubmit}>
+    <form className="form" onSubmit={props.onSubmit}>
       <h1 className="title">{SIGNUP}</h1>
       <label className="label" htmlFor="email">
         {EMAIL}

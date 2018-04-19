@@ -2,11 +2,9 @@ import React from 'react';
 import { LOGIN } from './strings';
 import { EMAIL, PASSWORD } from '../../shared/strings';
 
-import './styles.css';
-
 export default function Login(props) {
   return (
-    <form className="login" onSubmit={props.onSubmit}>
+    <form className="form" onSubmit={props.onSubmit}>
       <h1 className="title">{LOGIN}</h1>
       <label className="label" htmlFor="email">
         {EMAIL}
