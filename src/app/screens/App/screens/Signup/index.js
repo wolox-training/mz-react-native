@@ -46,8 +46,7 @@ class SignupContainer extends Component {
       validFirstName &&
       validLastNameError
     ) {
-      //this.requestAuthentication();
-      console.log('Signed up!');
+      this.props.history.push('/login');
     }
   };
 
