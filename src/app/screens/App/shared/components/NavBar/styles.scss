@@ -1,0 +1,21 @@
+.navbar {
+  display: flex;
+  width: 1440px;
+  height: 96px;
+  margin: auto;
+  justify-content: space-between;
+  align-items: center;
+  border-style: solid;
+  padding: 23px 34px;
+}
+
+.navbar-logo {
+  max-width: 182px;
+  max-height: 42px;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
