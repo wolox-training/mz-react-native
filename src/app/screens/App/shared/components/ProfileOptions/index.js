@@ -11,11 +11,14 @@ class ProfileOptions extends Component {
 
   render() {
     return (
-      <div className="profile-options">
-        <span className="profile-option">{PROFILE}</span>
-        <span className="profile-option" onClick={this.logOut}>
-          {LOG_OUT}
-        </span>
+      <div>
+        <div className="arrow" />
+        <div className="profile-options">
+          <span className="profile-option">{PROFILE}</span>
+          <span className="profile-option" onClick={this.logOut}>
+            {LOG_OUT}
+          </span>
+        </div>
       </div>
     );
   }
