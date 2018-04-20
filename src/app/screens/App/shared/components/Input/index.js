@@ -2,20 +2,20 @@ import React from 'react';
 import './styles.css';
 import PropTypes from 'prop-types';
 
-export default function Input(props) {
+export default function Input({ name, label, type, error, onInputChange }) {
   return (
     <div className="input-container">
-      <label className="label" htmlFor={props.name}>
-        {props.label}
+      <label className="label" htmlFor={name}>
+        {label}
       </label>
       <input
         required
-        type={props.type}
-        className={`input ${props.error ? 'error' : ''}`}
-        name={props.name}
-        onChange={props.onInputChange}
+        type={type}
+        className={`input ${error ? 'error' : ''}`}
+        name={name}
+        onChange={onInputChange}
       />
-      <span className="error-message">{props.error}</span>
+      <span className="error-message">{error}</span>
     </div>
   );
 }

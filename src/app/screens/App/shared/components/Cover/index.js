@@ -4,14 +4,13 @@ import { BOOK_COVER_ALT_TEXT } from '../../strings';
 import './styles.css';
 import PropTypes from 'prop-types';
 
-export default function Cover(props) {
-  const has_image = props.image;
-  const image_url = props.image || defaultBookImage;
+export default function Cover({ image, size }) {
+  const image_url = image || defaultBookImage;
 
   return (
-    <div className={`cover-container ${has_image ? '' : 'backgroundgray'} ${props.size}`}>
+    <div className={`cover-container ${image ? '' : 'backgroundgray'} ${size}`}>
       <img
-        className={`${has_image ? 'book-image' : 'default-image'} ${props.size}`}
+        className={`${image ? 'book-image' : 'default-image'} ${size}`}
         src={image_url}
         alt={BOOK_COVER_ALT_TEXT}
       />

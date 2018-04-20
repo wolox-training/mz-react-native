@@ -3,44 +3,52 @@ import { SIGNUP, PASSWORD_CONFIRMATION, FIRST_NAME, LAST_NAME } from './strings'
 import { EMAIL, PASSWORD } from '../../shared/strings';
 import Input from '../../shared/components/Input';
 
-export default function Signup(props) {
+export default function Signup({
+  onSubmit,
+  emailError,
+  onInputChange,
+  passwordError,
+  passwordConfirmationError,
+  firstNameError,
+  lastNameError
+}) {
   return (
-    <form className="form" onSubmit={props.onSubmit}>
+    <form className="form" onSubmit={onSubmit}>
       <h1 className="title">{SIGNUP}</h1>
       <Input
         name="email"
         type="email"
         label={EMAIL}
-        error={props.emailError}
-        onInputChange={props.onInputChange}
+        error={emailError}
+        onInputChange={onInputChange}
       />
       <Input
         name="password"
         type="password"
         label={PASSWORD}
-        error={props.passwordError}
-        onInputChange={props.onInputChange}
+        error={passwordError}
+        onInputChange={onInputChange}
       />
       <Input
         name="passwordConfirmation"
         type="password"
         label={PASSWORD_CONFIRMATION}
-        error={props.passwordConfirmationError}
-        onInputChange={props.onInputChange}
+        error={passwordConfirmationError}
+        onInputChange={onInputChange}
       />
       <Input
         name="firstName"
         type="text"
         label={FIRST_NAME}
-        error={props.firstNameError}
-        onInputChange={props.onInputChange}
+        error={firstNameError}
+        onInputChange={onInputChange}
       />
       <Input
         name="lastName"
         type="text"
         label={LAST_NAME}
-        error={props.lastNameError}
-        onInputChange={props.onInputChange}
+        error={lastNameError}
+        onInputChange={onInputChange}
       />
       <input type="submit" className="button" value={SIGNUP} />
     </form>

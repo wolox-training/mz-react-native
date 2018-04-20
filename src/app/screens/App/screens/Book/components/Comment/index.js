@@ -3,12 +3,12 @@ import CommentLayout from '../CommentLayout';
 import './styles.css';
 import PropTypes from 'prop-types';
 
-export default function Comment(props) {
+export default function Comment({ name, date, content }) {
   return (
     <CommentLayout>
-      <span className="comment-name">{props.name}</span>
-      <span className="comment-date">{props.date}</span>
-      <span className="comment-content">{props.content}</span>
+      <span className="comment-name">{name}</span>
+      <span className="comment-date">{date}</span>
+      <span className="comment-content">{content}</span>
     </CommentLayout>
   );
 }
