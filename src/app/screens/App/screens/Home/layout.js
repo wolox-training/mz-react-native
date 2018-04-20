@@ -6,15 +6,15 @@ import PropTypes from 'prop-types';
 import NavBar from '../../shared/components/NavBar';
 import './styles.css';
 
-export default function Home(props) {
+export default function Home({ books, onSearch, onChange }) {
   return (
     <NavBar>
       <div className="home">
         <div className="filters-container">
-          <FilterSelect onChange={props.onChange} />
-          <SearchBox onChange={props.onChange} onSearch={props.onSearch} />
+          <FilterSelect onChange={onChange} />
+          <SearchBox onChange={onChange} onSearch={onSearch} />
         </div>
-        <BookList books={props.books} />
+        <BookList books={books} />
       </div>
     </NavBar>
   );

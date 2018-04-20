@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import ProfileImage from '../../../../shared/components/ProfileImage';
 import './styles.css';
 
-export default function CommentLayout(props) {
+export default function CommentLayout({ image, children }) {
   return (
     <div className="comment-container">
-      <ProfileImage image={props.image} />
-      <div className="comment-info">{props.children}</div>
+      <ProfileImage image={image} />
+      <div className="comment-info">{children}</div>
     </div>
   );
 }

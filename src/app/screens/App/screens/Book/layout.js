@@ -7,14 +7,14 @@ import Suggestions from './components/Suggestions';
 import Comments from './components/Comments';
 import './styles.css';
 
-export default function Book(props) {
+export default function Book({ book }) {
   return (
     <div>
       <Link to={`/dashboard`} className="go-back">
         {GO_BACK}
       </Link>
       <div className="book-info-container">
-        <BookDetails book={props.book} />
+        <BookDetails book={book} />
         <Suggestions />
         <Comments />
       </div>

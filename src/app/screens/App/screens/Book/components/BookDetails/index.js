@@ -1,28 +1,24 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { RENT, LOREM_IPSUM } from '../../strings';
 import Cover from '../../../../shared/components/Cover';
 import './styles.css';
 
-class BookDetails extends Component {
-  render() {
-    return (
-      <div className="book-container">
-        <Cover image={this.props.book.image_url} size="big" />
-        <div className="book-details">
-          <span className="title">{this.props.book.title}</span>
-          <span className="author"> {this.props.book.author}</span>
-          <span className="year">{this.props.book.year}</span>
-          <span className="genre">{this.props.book.genre}</span>
-          <span className="desc">{this.props.book.desc || LOREM_IPSUM}</span>
-          <button className="rent-button">{RENT}</button>
-        </div>
+export default function BookDetails({ book }) {
+  return (
+    <div className="book-container">
+      <Cover image={book.image_url} size="big" />
+      <div className="book-details">
+        <span className="title">{book.title}</span>
+        <span className="author"> {book.author}</span>
+        <span className="year">{book.year}</span>
+        <span className="genre">{book.genre}</span>
+        <span className="desc">{book.desc || LOREM_IPSUM}</span>
+        <button className="rent-button">{RENT}</button>
       </div>
-    );
-  }
+    </div>
+  );
 }
-
-export default BookDetails;
 
 BookDetails.propTypes = {
   book: PropTypes.shape({

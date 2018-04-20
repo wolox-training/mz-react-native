@@ -3,7 +3,7 @@ import Cover from '../../../../shared/components/Cover';
 import { SUGGESTIONS } from '../../strings';
 import './styles.css';
 
-export default function Suggestions(props) {
+export default function Suggestions() {
   return (
     <div className="suggestions-container">
       <h1 className="subtitle">{SUGGESTIONS}</h1>
