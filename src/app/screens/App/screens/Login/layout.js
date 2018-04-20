@@ -1,34 +1,27 @@
 import React from 'react';
-import { LOGIN, EMAIL, PASSWORD } from './strings';
-import './styles.css';
+import { LOGIN } from './strings';
+import { EMAIL, PASSWORD } from '../../shared/strings';
+import Input from '../../shared/components/Input';
 
-export default function Login(props) {
+export default function Login({ onSubmit, emailError, onInputChange, passwordError }) {
   return (
-    <form className="login" onSubmit={props.onSubmit}>
+    <form className="form" onSubmit={onSubmit}>
       <h1 className="title">{LOGIN}</h1>
-      <label className="label" htmlFor="email">
-        {EMAIL}
-      </label>
-      <input
-        required
-        type="email"
-        className={`input ${props.emailError ? 'error' : ''}`}
+      <Input
         name="email"
-        onChange={props.onInputChange}
+        type="email"
+        label={EMAIL}
+        error={emailError}
+        onInputChange={onInputChange}
       />
-      {props.emailError && <span className="error-message">{props.emailError}</span>}
-      <label className="label" htmlFor="password">
-        {PASSWORD}
-      </label>
-      <input
-        required
-        type="password"
-        className={`input ${props.passwordError ? 'error' : ''}`}
+      <Input
         name="password"
-        onChange={props.onInputChange}
+        type="password"
+        label={PASSWORD}
+        error={passwordError}
+        onInputChange={onInputChange}
       />
-      {props.passwordError && <span className="error-message">{props.passwordError}</span>}
-      <input type="submit" className="login-button" value={LOGIN} onClick={props.onSubmit} />
+      <input type="submit" className="button" value={LOGIN} />
     </form>
   );
 }

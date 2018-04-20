@@ -3,12 +3,8 @@ import Book from '../Book';
 import PropTypes from 'prop-types';
 import './styles.css';
 
-export default function BookList(props) {
-  return (
-    <div className="booklist">
-      {props.books.map(book => <Book key={book.id} book={book} />)}
-    </div>
-  );
+export default function BookList({ books }) {
+  return <div className="booklist">{books.map(book => <Book key={book.id} book={book} />)}</div>;
 }
 
 BookList.propTypes = {

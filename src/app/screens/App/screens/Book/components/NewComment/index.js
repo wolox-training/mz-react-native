@@ -3,7 +3,7 @@ import { ADD_COMMENT, SEND_COMMENT } from '../../strings';
 import CommentLayout from '../CommentLayout';
 import './styles.css';
 
-export default function Comment(props) {
+export default function Comment() {
   return (
     <CommentLayout>
       <span className="add-comment">{ADD_COMMENT}</span>

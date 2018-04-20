@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Login from './layout';
-import { EMAIL_REGEX, HAS_NUMBER_REGEX } from '../../../../constants/regex';
-import { EMAIL_ERROR, PASSWORD_ERROR, WRONG_PASSWORD } from './strings';
+import { WRONG_PASSWORD } from './strings';
+import { EMAIL_ERROR, PASSWORD_ERROR } from '../../shared/strings';
+import { emailIsValid, passwordIsValid } from '../../../../utils/validationUtils';
 import { logIn } from '../../../../../service/service';
 
 class LoginContainer extends Component {
@@ -24,22 +25,18 @@ class LoginContainer extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    const email = this.state.email;
-    const password = this.state.password;
-
-    const invalidEmail = !EMAIL_REGEX.test(email);
-    const invalidPassword =
-      password.length < 8 || password.length > 52 || !HAS_NUMBER_REGEX.test(password);
+    const validEmail = emailIsValid(this.state.email);
+    const validPassword = passwordIsValid(this.state.password);
 
     this.setState({
-      emailError: invalidEmail && EMAIL_ERROR, //set either EMAIL_ERROR or false
-      passwordError: invalidPassword && PASSWORD_ERROR
+      emailError: !validEmail && EMAIL_ERROR, //set either EMAIL_ERROR or false
+      passwordError: !validPassword && PASSWORD_ERROR
     });
 
-    if (!invalidEmail && !invalidPassword) {
+    if (validEmail && validPassword) {
       logIn(this.state.email, this.state.password)
         .then(response => {
-          localStorage.setItem('currentUser', email);
+          localStorage.setItem('currentUser', this.state.email);
           this.props.history.push('/dashboard');
         })
         .catch(error => this.setState({ passwordError: WRONG_PASSWORD }));

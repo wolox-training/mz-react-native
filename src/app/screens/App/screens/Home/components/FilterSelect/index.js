@@ -4,14 +4,9 @@ import filterOptions, { defaultFilterOption } from '../../filterOptions';
 import './styles.css';
 import PropTypes from 'prop-types';
 
-export default function FilterSelect(props) {
+export default function FilterSelect({ onChange }) {
   return (
-    <select
-      name="filterField"
-      onChange={props.onChange}
-      className="filter-select"
-      defaultValue=""
-    >
+    <select name="filterField" onChange={onChange} className="filter-select" defaultValue="">
       <option disabled hidden value="">
         {SELECT_FILTER}
       </option>

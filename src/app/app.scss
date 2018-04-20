@@ -11,3 +11,34 @@
   width: 238px;
   padding: 9px 14px 10px 12px;
 }
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  width: 694px;
+  height: 692px;
+
+  .title {
+    font-family: Roboto-Bold;
+    font-size: 20px;
+    color: $tundora;
+    line-height: 19px;
+    margin-bottom: 19px;
+    font-weight: bold;
+  }
+
+  .button {
+    background: $cerulean;
+    width: 175px;
+    height: 38px;
+    font-family: Roboto-Bold;
+    font-size: 14px;
+    color: $white;
+    line-height: 19px;
+    font-weight: bold;
+    margin-top: 50px;
+  }
+}

@@ -6,6 +6,7 @@ import Landing from './screens/Landing';
 import Login from './screens/Login';
 import PrivateRoute from './components/PrivateRoute';
 import PublicOnlyRoute from './components/PublicOnlyRoute';
+import Signup from './screens/Signup';
 
 class App extends Component {
   render() {
@@ -13,6 +14,7 @@ class App extends Component {
       <Switch>
         <PublicOnlyRoute exact path="/" component={Landing} />
         <PublicOnlyRoute exact path="/login" component={Login} />
+        <PublicOnlyRoute exact path="/signup" component={Signup} />
         <PrivateRoute exact path="/dashboard" component={HomeContainer} />
         <PrivateRoute path="/books/:id" component={Book} />
       </Switch>
