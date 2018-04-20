@@ -7,20 +7,17 @@ import wBooksLogo from '../../../../../../assets/ASSETS/wbooks_logo.svg';
 import notifications from '../../../../../../assets/ASSETS/notifications.svg';
 import add_book from '../../../../../../assets/ASSETS/add_book.svg';
 
-export default function NavBar({ children }) {
+export default function NavBar() {
   return (
-    <div>
-      <nav className="navbar">
-        <Link to="/dashboard">
-          <img src={wBooksLogo} className="navbar-logo" alt={LOGO_ALT_TEXT} />
-        </Link>
-        <div className="menu">
-          <img src={notifications} />
-          <img src={add_book} />
-          <ProfileImage />
-        </div>
-      </nav>
-      {children}
-    </div>
+    <nav className="navbar">
+      <Link to="/dashboard">
+        <img src={wBooksLogo} className="navbar-logo" alt={LOGO_ALT_TEXT} />
+      </Link>
+      <div className="menu">
+        <img src={notifications} />
+        <img src={add_book} />
+        <ProfileImage />
+      </div>
+    </nav>
   );
 }
