@@ -1,3 +1,5 @@
+@import '../../../../../constants/colors';
+
 .notification {
   height: 117px;
   display: flex;
@@ -28,7 +30,7 @@
 .notification-author {
   font-family: Roboto-Regular;
   font-size: 12px;
-  color: #4a4a4a;
+  color: $tundora;
   letter-spacing: 0px;
   line-height: 19px;
 }
@@ -36,6 +38,6 @@
 .notification-alert {
   font-family: Roboto-Regular;
   font-size: 12px;
-  color: #ff233e;
+  color: $torch-red;
   line-height: 19px;
 }
