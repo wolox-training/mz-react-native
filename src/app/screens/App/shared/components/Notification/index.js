@@ -1,17 +1,25 @@
 import Cover from '../Cover';
 import React from 'react';
+import PropTypes from 'prop-types';
 import './styles.css';
 
-export default function Notification() {
+export default function Notification({ text, title, author, alert }) {
   return (
     <div className="notification">
       <Cover size="notification" />
       <div className="notification-info">
-        <span className="notification-text">Se encuentra disponible el libro:</span>
-        <span className="notification-title">Título</span>
-        <span className="notification-author">Autor</span>
-        <span className="notification-alert">Fecha de devolución: xx/xx/xx</span>
+        <span className="notification-text">{text}</span>
+        <span className="notification-title">{title}</span>
+        <span className="notification-author">{author}</span>
+        <span className="notification-alert">{alert}</span>
       </div>
     </div>
   );
 }
+
+Notification.propTypes = {
+  text: PropTypes.string.isRequired,
+  title: PropTypes.string,
+  author: PropTypes.string,
+  alert: PropTypes.string
+};
