@@ -5,3 +5,5 @@ export const PASSWORD = 'Contraseña';
 export const EMAIL_ERROR = 'Por favor ingresar un email válido';
 export const PASSWORD_ERROR = 'Por favor ingresar una contraseña válida';
 export const PROFILE_IMAGE_ALT_TEXT = 'Foto de perfil';
+export const NOTIFICATIONS_ICON_ALT_TEXT = 'Notificaciones';
+export const BOOK_SUGGESTIONS_ICON_ALT_TEXT = 'Sugerencias';
