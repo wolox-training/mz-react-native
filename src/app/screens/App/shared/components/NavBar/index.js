@@ -7,7 +7,7 @@ import wBooksLogo from '../../../../../../assets/ASSETS/wbooks_logo.svg';
 import notifications from '../../../../../../assets/ASSETS/notifications.svg';
 import add_book from '../../../../../../assets/ASSETS/add_book.svg';
 
-export default function NavBar(props) {
+export default function NavBar({ children }) {
   return (
     <div>
       <nav className="navbar">
@@ -20,7 +20,7 @@ export default function NavBar(props) {
           <ProfileImage />
         </div>
       </nav>
-      {props.children}
+      {children}
     </div>
   );
 }

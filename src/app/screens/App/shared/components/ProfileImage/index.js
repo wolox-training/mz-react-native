@@ -4,8 +4,8 @@ import { PROFILE_IMAGE_ALT_TEXT } from '../../strings';
 import PropTypes from 'prop-types';
 import './styles.css';
 
-export default function ProfileImage(props) {
-  return <img src={props.image} className="profile-image" alt={PROFILE_IMAGE_ALT_TEXT} />;
+export default function ProfileImage({ image }) {
+  return <img src={image} className="profile-image" alt={PROFILE_IMAGE_ALT_TEXT} />;
 }
 
 ProfileImage.propTypes = {
