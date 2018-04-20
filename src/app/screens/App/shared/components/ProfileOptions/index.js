@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
+import { PROFILE, LOG_OUT } from '../../strings';
 import './styles.css';
 
 class ProfileOptions extends Component {
@@ -11,9 +12,9 @@ class ProfileOptions extends Component {
   render() {
     return (
       <div className="profile-options">
-        <span className="profile-option">Perfil</span>
+        <span className="profile-option">{PROFILE}</span>
         <span className="profile-option" onClick={this.logOut}>
-          Cerrar sesión
+          {LOG_OUT}
         </span>
       </div>
     );
