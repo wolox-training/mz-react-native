@@ -12,7 +12,6 @@ class ProfileOptions extends Component {
   render() {
     return (
       <div>
-        <div className="arrow" />
         <div className="profile-options">
           <span className="profile-option">{PROFILE}</span>
           <span className="profile-option" onClick={this.logOut}>
