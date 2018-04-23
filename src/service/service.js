@@ -12,3 +12,5 @@ export const signUp = (email, password, confirm_password, first_name, last_name)
       locale: 'en'
     }
   });
+export const getBooks = id => Api.get('books');
+export const getBook = id => Api.get(`books/${id}`);

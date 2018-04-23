@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import books from '../../../../../data/books.json';
 import Home from './layout';
 import filterOptions, { defaultFilterOption } from './filterOptions';
+import { getBooks } from '../../../../../service/service';
 
 class HomeContainer extends Component {
   state = {
-    filteredBooks: books,
+    books: [],
+    filteredBooks: [],
     filterField: defaultFilterOption,
     searchText: ''
   };
@@ -25,7 +26,7 @@ class HomeContainer extends Component {
       this.state.filterField === defaultFilterOption
         ? filterOptions.map(filterOption => filterOption.value)
         : [this.state.filterField];
-    const filteredBooks = books.filter(book =>
+    const filteredBooks = this.state.books.filter(book =>
       filterFields.some(filterField => {
         const bookProperty = book[filterField];
         const lowerCaseBookProperty = bookProperty.toLowerCase();
@@ -36,6 +37,16 @@ class HomeContainer extends Component {
 
     this.setState({ filteredBooks });
   };
+
+  componentDidMount() {
+    getBooks()
+      .then(response => {
+        this.setState({ books: response.data, filteredBooks: response.data });
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+  }
 
   render() {
     return (
