@@ -4,7 +4,7 @@ import { WRONG_PASSWORD } from './strings';
 import { EMAIL_ERROR, PASSWORD_ERROR } from '../../shared/strings';
 import { emailIsValid, passwordIsValid } from '../../../../utils/validationUtils';
 import { logIn } from '../../../../../service/service';
-import { setAuthToken } from '../../../../../config/api';
+import { setAuthorization } from '../../../../../config/api';
 
 class LoginContainer extends Component {
   state = {
@@ -38,7 +38,8 @@ class LoginContainer extends Component {
       logIn(this.state.email, this.state.password)
         .then(response => {
           localStorage.setItem('currentUser', this.state.email);
-          setAuthToken(response.data.access_token);
+          localStorage.setItem('authToken', response.data.access_token);
+          setAuthorization(response.data.access_token);
           this.props.history.push('/dashboard');
         })
         .catch(error => this.setState({ passwordError: WRONG_PASSWORD }));
