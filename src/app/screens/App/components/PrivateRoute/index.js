@@ -1,7 +1,11 @@
 import React from 'react';
 import CustomRoute from '../CustomRoute';
 import { hasUserAccess } from '../../../../utils/storageUtils';
+import NavBar from '../../shared/components/NavBar';
 
 export default ({ ...rest }) => (
-  <CustomRoute {...rest} isAllowedAccess={hasUserAccess()} redirectPath="/login" />
+  <div>
+    <NavBar />
+    <CustomRoute {...rest} isAllowedAccess={hasUserAccess()} redirectPath="/login" />
+  </div>
 );

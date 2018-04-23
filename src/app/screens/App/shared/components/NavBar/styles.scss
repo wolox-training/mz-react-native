@@ -1,0 +1,25 @@
+@import '../../../../../constants/colors';
+
+.navbar {
+  display: flex;
+  width: 1440px;
+  height: 96px;
+  margin: 22px auto;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid $titan-white;
+  box-shadow: 0 25px 20px -20px $titan-white;
+  padding: 23px 34px;
+}
+
+.navbar-logo {
+  max-width: 182px;
+  max-height: 42px;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 149px;
+}

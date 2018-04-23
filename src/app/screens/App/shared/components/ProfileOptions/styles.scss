@@ -1,0 +1,25 @@
+@import '../../../../../constants/colors';
+
+.profile-options {
+  background-color: $white;
+  border: 1px solid $titan-white;
+  width: 158px;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 50px;
+  right: 15px;
+  box-shadow: 0 3px 20px -1px $titan-white;
+}
+
+.profile-option {
+  font-family: Roboto-Regular;
+  font-size: 14px;
+  line-height: 31px;
+  padding: 6px 0 7px 12px;
+
+  &:hover {
+    background: $light-cerulean;
+    z-index: 2;
+  }
+}

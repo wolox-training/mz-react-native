@@ -1,0 +1,17 @@
+@import '../../../../../constants/colors';
+
+.notifications {
+  background: $white;
+  border: 1px solid $titan-white;
+  width: 321px;
+  position: absolute;
+  top: 39px;
+  right: -6px;
+  box-shadow: 0 3px 20px -1px $titan-white;
+
+  .separator {
+    background-color: $titan-white;
+    height: 1px;
+    border: 0;
+  }
+}
