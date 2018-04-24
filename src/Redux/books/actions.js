@@ -1,15 +1,21 @@
 import { getBooks } from '../../service/service';
 
+export const actions = {
+  GET_BOOKS_SUCCESS: 'GET_BOOKS_SUCCESS',
+  GET_BOOKS_FAILURE: 'GET_BOOKS_FAILURE',
+  GET_BOOKS: 'GET_BOOKS'
+};
+
 const privateActionCreators = {
   getBooksSuccess(data) {
     return {
-      type: 'GET_BOOKS_SUCCESS',
+      type: actions.GET_BOOKS_SUCCESS,
       payload: { data }
     };
   },
   getBooksFailure(err) {
     return {
-      type: 'GET_BOOKS_FAILURE',
+      type: actions.GET_BOOKS_FAILURE,
       payload: { err }
     };
   }
@@ -18,7 +24,7 @@ const privateActionCreators = {
 export const actionCreators = {
   getBooks() {
     return async dispatch => {
-      dispatch({ type: 'GET_BOOKS' });
+      dispatch({ type: actions.GET_BOOKS });
       try {
         const response = await getBooks();
         if (response.statusText === 'OK') {
