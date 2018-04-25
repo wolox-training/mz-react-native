@@ -6,7 +6,6 @@ import { actionCreators } from '../../../../../Redux/books/actions';
 
 class HomeContainer extends Component {
   state = {
-    filteredBooks: [],
     filterField: defaultFilterOption,
     searchText: ''
   };
@@ -21,21 +20,25 @@ class HomeContainer extends Component {
     });
   };
 
-  handleSearch = () => {
+  getFilteredBooks() {
     const filterFields =
       this.state.filterField === defaultFilterOption
         ? filterOptions.map(filterOption => filterOption.value)
         : [this.state.filterField];
-    const filteredBooks = this.state.books.filter(book =>
+    const filteredBooks = this.props.books.filter(book =>
       filterFields.some(filterField => {
-        const bookProperty = book[filterField];
+        const bookProperty = book.get(filterField);
         const lowerCaseBookProperty = bookProperty.toLowerCase();
         const lowerCaseSearchedText = this.state.searchText.toLowerCase();
         return lowerCaseBookProperty.search(lowerCaseSearchedText) !== -1;
       })
     );
 
-    this.setState({ filteredBooks });
+    return filteredBooks;
+  }
+
+  handleSearch = () => {
+    this.filterBooks();
   };
 
   componentDidMount() {
@@ -43,12 +46,9 @@ class HomeContainer extends Component {
   }
 
   render() {
+    const filteredBooks = this.getFilteredBooks(this.props.books);
     return (
-      <Home
-        onChange={this.handleInputChange}
-        onSearch={this.handleSearch}
-        books={this.props.books}
-      />
+      <Home onChange={this.handleInputChange} onSearch={this.handleSearch} books={filteredBooks} />
     );
   }
 }
