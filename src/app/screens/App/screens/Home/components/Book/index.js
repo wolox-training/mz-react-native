@@ -7,11 +7,11 @@ import PropTypes from 'prop-types';
 export default function Book({ book }) {
   return (
     <div className="book">
-      <Link to={`/books/${book.id}`}>
-        <Cover image={book.image_url} size="small" />
+      <Link to={`/books/${book.get('id')}`}>
+        <Cover image={book.get('image_url')} size="small" />
       </Link>
-      <span className="book-title">{book.title}</span>
-      <span className="book-author">{book.author}</span>
+      <span className="book-title">{book.get('title')}</span>
+      <span className="book-author">{book.get('author')}</span>
     </div>
   );
 }
