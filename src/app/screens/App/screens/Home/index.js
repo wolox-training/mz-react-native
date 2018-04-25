@@ -1,11 +1,11 @@
+import { connect } from 'react-redux';
 import React, { Component } from 'react';
 import Home from './layout';
 import filterOptions, { defaultFilterOption } from './filterOptions';
-import { getBooks } from '../../../../../service/service';
+import { actionCreators } from '../../../../../Redux/books/actions';
 
 class HomeContainer extends Component {
   state = {
-    books: [],
     filteredBooks: [],
     filterField: defaultFilterOption,
     searchText: ''
@@ -39,13 +39,7 @@ class HomeContainer extends Component {
   };
 
   componentDidMount() {
-    getBooks()
-      .then(response => {
-        this.setState({ books: response.data, filteredBooks: response.data });
-      })
-      .catch(function(error) {
-        console.log(error);
-      });
+    this.props.dispatch(actionCreators.getBooks());
   }
 
   render() {
@@ -53,10 +47,14 @@ class HomeContainer extends Component {
       <Home
         onChange={this.handleInputChange}
         onSearch={this.handleSearch}
-        books={this.state.filteredBooks}
+        books={this.props.books}
       />
     );
   }
 }
 
-export default HomeContainer;
+const mapStateToProps = state => ({
+  books: state.books.get('books')
+});
+
+export default connect(mapStateToProps)(HomeContainer);
