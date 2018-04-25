@@ -1,29 +1,23 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import NavBar from './layout';
+import { actionCreators } from '../../../../../../Redux/droppableMenues/actions';
 import './styles.css';
 
 class NavBarContainer extends Component {
-  state = { showProfileOptions: false, showNotifications: false };
-
   toggleShowProfileOptions = () => {
-    this.setState(prevState => ({
-      showProfileOptions: !prevState.showProfileOptions,
-      showNotifications: false
-    }));
+    this.props.dispatch(actionCreators.toggle_show_profile_options());
   };
 
   toggleShowNotifications = () => {
-    this.setState(prevState => ({
-      showNotifications: !prevState.showNotifications,
-      showProfileOptions: false
-    }));
+    this.props.dispatch(actionCreators.toggle_show_notifications());
   };
 
   render() {
     return (
       <NavBar
-        showNotifications={this.state.showNotifications}
-        showProfileOptions={this.state.showProfileOptions}
+        showNotifications={this.props.showNotifications}
+        showProfileOptions={this.props.showProfileOptions}
         toggleShowProfileOptions={this.toggleShowProfileOptions}
         toggleShowNotifications={this.toggleShowNotifications}
       />
@@ -31,4 +25,9 @@ class NavBarContainer extends Component {
   }
 }
 
-export default NavBarContainer;
+const mapStateToProps = state => ({
+  showProfileOptions: state.droppableMenues.get('showingProfileOptions'),
+  showNotifications: state.droppableMenues.get('showingNotifications')
+});
+
+export default connect(mapStateToProps)(NavBarContainer);
