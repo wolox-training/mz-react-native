@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export const Api = axios.create({
   baseURL: process.env.REACT_APP_API_BASE_URL,
-  timeout: 1000,
+  timeout: 2000,
   headers: { Authorization: localStorage.getItem('authToken') } //for f5 case
 });
 
