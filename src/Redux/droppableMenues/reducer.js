@@ -6,13 +6,15 @@ const defaultState = { showingNotifications: false, showingProfileOptions: false
 export default function reducer(state = Immutable(defaultState), action) {
   switch (action.type) {
     case actions.TOGGLE_SHOW_NOTIFICATIONS:
-      return state
-        .set('showingNotifications', !state.get('showingNotifications'))
-        .set('showingProfileOptions', false);
+      return state.merge({
+        showingNotifications: !state.showingNotifications,
+        showingProfileOptions: false
+      });
     case actions.TOGGLE_SHOW_PROFILE_OPTIONS:
-      return state
-        .set('showingProfileOptions', !state.get('showingProfileOptions'))
-        .set('showingNotifications', false);
+      return state.merge({
+        showingProfileOptions: !state.showingProfileOptions,
+        showingNotifications: false
+      });
     default:
       return state;
   }
