@@ -1,28 +1,29 @@
+import { connect } from 'react-redux';
 import React, { Component } from 'react';
 import Book from './layout';
-import { getBook } from '../../../../../service/service';
+import { actionCreators } from '../../../../../Redux/books/actions';
 
 class BookContainer extends Component {
-  state = { book: null };
-
   componentDidMount() {
     const bookID = parseInt(this.props.match.params.id, 10);
-    getBook(bookID)
-      .then(r => {
-        this.setState({ book: r.data });
-      })
-      .catch(function(error) {
-        console.log(error);
-      });
+    this.props.dispatch(actionCreators.getBook(bookID));
+  }
+
+  componentWillUnmount() {
+    this.props.dispatch(actionCreators.clearBook());
   }
 
   render() {
-    if (this.state.book) {
-      return <Book book={this.state.book} />;
+    if (this.props.book) {
+      return <Book book={this.props.book} />;
     } else {
       return <span>404</span>;
     }
   }
 }
 
-export default BookContainer;
+const mapStateToProps = state => ({
+  book: state.books.currentBook
+});
+
+export default connect(mapStateToProps)(BookContainer);

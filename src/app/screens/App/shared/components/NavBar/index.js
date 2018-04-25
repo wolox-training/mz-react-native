@@ -1,58 +1,33 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import {
-  LOGO_ALT_TEXT,
-  NOTIFICATIONS_ICON_ALT_TEXT,
-  BOOK_SUGGESTIONS_ICON_ALT_TEXT
-} from '../../strings';
-import ProfileImage from '../ProfileImage';
-import Notifications from '../Notifications';
-import Droppable from '../Droppable';
+import { connect } from 'react-redux';
+import NavBar from './layout';
+import { actionCreators } from '../../../../../../Redux/droppableMenues/actions';
 import './styles.css';
-import wBooksLogo from '../../../../../../assets/ASSETS/wbooks_logo.svg';
-import notifications from '../../../../../../assets/ASSETS/notifications.svg';
-import add_book from '../../../../../../assets/ASSETS/add_book.svg';
-import ProfileOptions from '../ProfileOptions';
 
-class NavBar extends Component {
-  state = { showProfileOptions: false, showNotifications: false };
-
+class NavBarContainer extends Component {
   toggleShowProfileOptions = () => {
-    this.setState(prevState => ({
-      showProfileOptions: !prevState.showProfileOptions,
-      showNotifications: false
-    }));
+    this.props.dispatch(actionCreators.toggle_show_profile_options());
   };
 
   toggleShowNotifications = () => {
-    this.setState(prevState => ({
-      showNotifications: !prevState.showNotifications,
-      showProfileOptions: false
-    }));
+    this.props.dispatch(actionCreators.toggle_show_notifications());
   };
 
   render() {
     return (
-      <nav className="navbar">
-        <Link to="/dashboard">
-          <img src={wBooksLogo} className="navbar-logo" alt={LOGO_ALT_TEXT} />
-        </Link>
-        <div className="menu">
-          <Droppable showDropdown={this.state.showNotifications} dropdown={<Notifications />}>
-            <img
-              src={notifications}
-              alt={NOTIFICATIONS_ICON_ALT_TEXT}
-              onClick={this.toggleShowNotifications}
-            />
-          </Droppable>
-          <img src={add_book} alt={BOOK_SUGGESTIONS_ICON_ALT_TEXT} />
-          <Droppable showDropdown={this.state.showProfileOptions} dropdown={<ProfileOptions />}>
-            <ProfileImage onClick={this.toggleShowProfileOptions} />
-          </Droppable>
-        </div>
-      </nav>
+      <NavBar
+        showNotifications={this.props.showNotifications}
+        showProfileOptions={this.props.showProfileOptions}
+        toggleShowProfileOptions={this.toggleShowProfileOptions}
+        toggleShowNotifications={this.toggleShowNotifications}
+      />
     );
   }
 }
 
-export default NavBar;
+const mapStateToProps = state => ({
+  showProfileOptions: state.droppableMenues.showingProfileOptions,
+  showNotifications: state.droppableMenues.showingNotifications
+});
+
+export default connect(mapStateToProps)(NavBarContainer);

@@ -1,12 +1,11 @@
+import { connect } from 'react-redux';
 import React, { Component } from 'react';
 import Home from './layout';
 import filterOptions, { defaultFilterOption } from './filterOptions';
-import { getBooks } from '../../../../../service/service';
+import { actionCreators } from '../../../../../Redux/books/actions';
 
 class HomeContainer extends Component {
   state = {
-    books: [],
-    filteredBooks: [],
     filterField: defaultFilterOption,
     searchText: ''
   };
@@ -21,12 +20,12 @@ class HomeContainer extends Component {
     });
   };
 
-  handleSearch = () => {
+  getFilteredBooks() {
     const filterFields =
       this.state.filterField === defaultFilterOption
         ? filterOptions.map(filterOption => filterOption.value)
         : [this.state.filterField];
-    const filteredBooks = this.state.books.filter(book =>
+    const filteredBooks = this.props.books.filter(book =>
       filterFields.some(filterField => {
         const bookProperty = book[filterField];
         const lowerCaseBookProperty = bookProperty.toLowerCase();
@@ -35,28 +34,27 @@ class HomeContainer extends Component {
       })
     );
 
-    this.setState({ filteredBooks });
+    return filteredBooks;
+  }
+
+  handleSearch = () => {
+    this.filterBooks();
   };
 
   componentDidMount() {
-    getBooks()
-      .then(response => {
-        this.setState({ books: response.data, filteredBooks: response.data });
-      })
-      .catch(function(error) {
-        console.log(error);
-      });
+    this.props.dispatch(actionCreators.getBooks());
   }
 
   render() {
+    const filteredBooks = this.getFilteredBooks(this.props.books);
     return (
-      <Home
-        onChange={this.handleInputChange}
-        onSearch={this.handleSearch}
-        books={this.state.filteredBooks}
-      />
+      <Home onChange={this.handleInputChange} onSearch={this.handleSearch} books={filteredBooks} />
     );
   }
 }
 
-export default HomeContainer;
+const mapStateToProps = state => ({
+  books: state.books.books
+});
+
+export default connect(mapStateToProps)(HomeContainer);
