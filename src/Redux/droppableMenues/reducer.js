@@ -1,9 +1,9 @@
-import Immutable from 'immutable';
+import Immutable from 'seamless-immutable';
 import { actions } from './actions';
 
 const defaultState = { showingNotifications: false, showingProfileOptions: false };
 
-export default function reducer(state = Immutable.Map(defaultState), action) {
+export default function reducer(state = Immutable(defaultState), action) {
   switch (action.type) {
     case actions.TOGGLE_SHOW_NOTIFICATIONS:
       return state
