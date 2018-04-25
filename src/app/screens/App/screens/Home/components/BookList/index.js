@@ -4,9 +4,7 @@ import PropTypes from 'prop-types';
 import './styles.css';
 
 export default function BookList({ books }) {
-  return (
-    <div className="booklist">{books.map(book => <Book key={book.get('id')} book={book} />)}</div>
-  );
+  return <div className="booklist">{books.map(book => <Book key={book.id} book={book} />)}</div>;
 }
 
 BookList.propTypes = {

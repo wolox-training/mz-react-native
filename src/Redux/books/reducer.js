@@ -3,7 +3,7 @@ import { actions } from './actions';
 
 const defaultState = { books: [], currentBook: {} };
 
-export default function reducer(state = Immutable.Map(defaultState), action) {
+export default function reducer(state = Immutable(defaultState), action) {
   switch (action.type) {
     case actions.GET_BOOKS_SUCCESS:
       return state.merge({ books: action.payload.data });

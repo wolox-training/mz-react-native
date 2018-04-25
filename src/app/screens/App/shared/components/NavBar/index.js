@@ -26,8 +26,8 @@ class NavBarContainer extends Component {
 }
 
 const mapStateToProps = state => ({
-  showProfileOptions: state.droppableMenues.get('showingProfileOptions'),
-  showNotifications: state.droppableMenues.get('showingNotifications')
+  showProfileOptions: state.droppableMenues.showingProfileOptions,
+  showNotifications: state.droppableMenues.showingNotifications
 });
 
 export default connect(mapStateToProps)(NavBarContainer);

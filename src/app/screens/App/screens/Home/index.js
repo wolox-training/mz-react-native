@@ -27,7 +27,7 @@ class HomeContainer extends Component {
         : [this.state.filterField];
     const filteredBooks = this.props.books.filter(book =>
       filterFields.some(filterField => {
-        const bookProperty = book.get(filterField);
+        const bookProperty = book[filterField];
         const lowerCaseBookProperty = bookProperty.toLowerCase();
         const lowerCaseSearchedText = this.state.searchText.toLowerCase();
         return lowerCaseBookProperty.search(lowerCaseSearchedText) !== -1;
@@ -54,7 +54,7 @@ class HomeContainer extends Component {
 }
 
 const mapStateToProps = state => ({
-  books: state.books.get('books')
+  books: state.books.books
 });
 
 export default connect(mapStateToProps)(HomeContainer);
