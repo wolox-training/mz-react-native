@@ -1,7 +1,7 @@
 import Immutable from 'seamless-immutable';
 import { actions } from './actions';
 
-const defaultState = { books: [], currentBook: {} };
+const defaultState = { books: [], currentBook: null };
 
 export default function reducer(state = Immutable(defaultState), action) {
   switch (action.type) {
@@ -16,7 +16,7 @@ export default function reducer(state = Immutable(defaultState), action) {
       console.error(action.payload.err);
       return state;
     case actions.CLEAR_BOOK:
-      return state.merge({ currentBook: {} });
+      return Immutable.without(state, 'currentBook');
     default:
       return state;
   }
