@@ -10,9 +10,9 @@ export default function reducer(state = Immutable(defaultState), action) {
     case actions.GET_BOOKS_FAILURE:
       console.error(action.payload.err);
       return state;
-    case actions.GET_BOOK_SUCCESS:
+    case actions.GET_BOOK_DETAILS_SUCCESS:
       return state.merge({ currentBook: action.payload.data });
-    case actions.GET_BOOK_FAILURE:
+    case actions.GET_BOOK_DETAILS_FAILURE:
       console.error(action.payload.err);
       return state;
     case actions.CLEAR_BOOK:
