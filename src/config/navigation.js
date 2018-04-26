@@ -1,5 +1,5 @@
 import * as Routes from '../constants/routes';
-import { blue, white } from '../constants/colors';
+import { cornflowerBlue, white } from '../constants/colors';
 
 import I18n from './i18n';
 
@@ -10,13 +10,15 @@ const defaultNavOptions = ({ navigation }) => ({
 
   // TODO: The following options are examples. Change them to your need
   headerStyle: {
-    backgroundColor: blue
+    backgroundColor: cornflowerBlue
   },
   headerBackTitleStyle: {
     color: white
   },
   headerTitleStyle: {
-    color: white
+    color: white,
+    textAlign: 'center',
+    flex: 1
     // TODO: If you want to change the header font, apply these options
     // Replace the font with the need
     // See: https://medium.com/react-native-training/react-native-custom-fonts-ccc9aacf9e5e
@@ -31,7 +33,7 @@ export const screensNavOptions = {
   // the default ones defined in defaultNavOptions, for example...
   [Routes.TodoList]: {
     title: 'Todo List'
-  },
+  }
 };
 
 export const stackNavConfig = {
