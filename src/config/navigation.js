@@ -10,7 +10,8 @@ const defaultNavOptions = ({ navigation }) => ({
 
   // TODO: The following options are examples. Change them to your need
   headerStyle: {
-    backgroundColor: cornflowerBlue
+    backgroundColor: cornflowerBlue,
+    elevation: 0
   },
   headerBackTitleStyle: {
     color: white
