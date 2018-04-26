@@ -6,7 +6,7 @@ import * as Routes from '../constants/routes';
 const namespace = 'app';
 const translations = {
   es: {
-    [Routes.Home]: 'Home'
+    [Routes.TodoList]: 'Todo List'
   }
 };
 

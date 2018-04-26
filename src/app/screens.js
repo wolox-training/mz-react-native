@@ -7,13 +7,13 @@ import { StackNavigator } from 'react-navigation';
 import * as Routes from '../constants/routes';
 import { stackNavConfig, screensNavOptions,  } from '../config/navigation';
 
-import Home from './screens/Home';
+import TodoList from './screens/TodoList';
 
 export default StackNavigator(
   {
-    [Routes.Home]: {
-      screen: Home,
-      navigationOptions: screensNavOptions[Routes.Home]
+    [Routes.TodoList]: {
+      screen: TodoList,
+      navigationOptions: screensNavOptions[Routes.TodoList]
     }
   },
   stackNavConfig
