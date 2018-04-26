@@ -37,7 +37,6 @@ export const screensNavOptions = {
     header: null
   }
   */
-  }
 };
 
 export const stackNavConfig = {
