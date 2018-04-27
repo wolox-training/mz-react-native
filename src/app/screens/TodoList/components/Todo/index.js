@@ -11,11 +11,18 @@ class TodoContainer extends Component {
     this.props.dispatch(actionCreators.toggleToDoComplete(this.props.toDo.id));
   };
 
+  delete = () => {
+    this.props.dispatch(actionCreators.delete(this.props.toDo.id));
+  };
+
   render() {
     return (
-      <View>
+      <View style={styles.toDoContainer}>
         <Text style={this.props.toDo.completed && styles.toDoText}>{this.props.toDo.text}</Text>
-        <Button onPress={this.toggleComplete} title="Done" />
+        <View style={styles.toDoContainer}>
+          <Button onPress={this.toggleComplete} title="Done" />
+          <Button onPress={this.delete} title="Delete" />
+        </View>
       </View>
     );
   }

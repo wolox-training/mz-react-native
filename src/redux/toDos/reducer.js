@@ -8,8 +8,8 @@ const defaultState = {
 
 export default function reducer(state = Immutable(defaultState), action) {
   switch (action.type) {
-    case actions.ADD_TODO:
-      return state.merge({ books: action.payload.data });
+    case actions.DELETE_TODO:
+      return state.merge({ toDos: state.toDos.filter(toDo => toDo.id !== action.id) });
     case actions.TOGGLE_TODO_COMPLETE:
       return state.merge({
         toDos: state.toDos.map(todo => {
