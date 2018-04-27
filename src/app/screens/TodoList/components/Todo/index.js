@@ -19,7 +19,7 @@ class TodoContainer extends Component {
     return (
       <View style={styles.toDoContainer}>
         <Text style={this.props.toDo.completed && styles.toDoText}>{this.props.toDo.text}</Text>
-        <View style={styles.toDoContainer}>
+        <View style={styles.toDoOptions}>
           <Button onPress={this.toggleComplete} title="Done" />
           <Button onPress={this.delete} title="Delete" />
         </View>

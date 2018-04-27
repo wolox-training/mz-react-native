@@ -8,5 +8,8 @@ export default StyleSheet.create({
   toDoContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between'
+  },
+  toDoOptions: {
+    flexDirection: 'row'
   }
 });
