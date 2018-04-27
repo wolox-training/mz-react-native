@@ -14,7 +14,8 @@
     "lint": "eslint src",
     "lint-fix": "eslint src --fix",
     "lint-diff": "git diff --name-only --cached --relative | grep \\.js$ | xargs eslint",
-    "precommit": "npm run lint-diff"
+    "precommit": "npm run lint-diff",
+    "android": "yarn run start & react-native run-android"
   },
   "dependencies": {
     "apisauce": "^0.14.3",
@@ -32,6 +33,7 @@
     "reactotron-react-native": "^1.14.0",
     "reactotron-redux": "^1.13.0",
     "redux": "^4.0.0",
+    "redux-form": "^7.3.0",
     "redux-thunk": "^2.2.0",
     "reselect": "^3.0.1",
     "seamless-immutable": "^7.1.3"
