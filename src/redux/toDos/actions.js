@@ -5,7 +5,7 @@ export const actions = {
 
 export const actionCreators = {
   toggleToDoComplete(id) {
-    return { type: actions.MARK_TODO_AS_DONE, id };
+    return { type: actions.TOGGLE_TODO_COMPLETE, id };
   },
   delete(id) {
     return { type: actions.DELETE_TODO, id };
