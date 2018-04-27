@@ -8,11 +8,13 @@ import styles from './styles';
 
 class TodoContainer extends Component {
   toggleComplete = () => {
-    this.props.dispatch(actionCreators.toggleToDoComplete(this.props.toDo.id));
+    const action = actionCreators.toggleToDoComplete(this.props.toDo.id);
+    this.props.dispatch(action);
   };
 
   delete = () => {
-    this.props.dispatch(actionCreators.delete(this.props.toDo.id));
+    const action = actionCreators.delete(this.props.toDo.id);
+    this.props.dispatch(action);
   };
 
   render() {
