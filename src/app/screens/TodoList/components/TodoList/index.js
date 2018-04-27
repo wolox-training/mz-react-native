@@ -4,8 +4,14 @@ import { View } from 'react-native';
 
 import Todo from '../Todo';
 
-function TodoList(props) {
-  return <View>{props.toDos.map(toDo => <Todo toDo={toDo} key={toDo.id} />)}</View>;
+function TodoList({ onToggleComplete, onDelete, toDos }) {
+  return (
+    <View>
+      {toDos.map(toDo => (
+        <Todo toDo={toDo} key={toDo.id} onToggleComplete={onToggleComplete} onDelete={onDelete} />
+      ))}
+    </View>
+  );
 }
 
 const mapStateToProps = state => ({
