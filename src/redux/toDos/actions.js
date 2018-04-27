@@ -1,5 +1,4 @@
 export const actions = {
-  ADD_TODO: 'ADD_TODO',
   TOGGLE_TODO_COMPLETE: 'MARK_TODO_AS_DONE',
   DELETE_TODO: 'DELETE_TODO'
 };
