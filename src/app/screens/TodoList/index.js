@@ -1,14 +1,13 @@
 import React from 'react';
 import { View } from 'react-native';
 
-import CustomText from '../../components/CustomText';
-
 import styles from './styles';
+import TodoInput from './components/TodoInput';
 
 export default function TodoList() {
   return (
     <View style={styles.container}>
-      <CustomText style={styles.mainButton}>RNTraining</CustomText>
+      <TodoInput />
     </View>
   );
 }
