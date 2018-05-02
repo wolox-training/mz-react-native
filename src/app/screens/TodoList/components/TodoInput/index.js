@@ -1,31 +1,28 @@
 import React from 'react';
-import { Field, reduxForm } from 'redux-form';
+import { Field, reduxForm, reset } from 'redux-form';
+import { TextInput } from 'react-native';
 
-import CustomTextInput from '../../../../components/CustomTextInput';
+import { actionCreators } from '../../../../../redux/toDos/actions';
 
 import styles from './styles';
 
-function InputText(props) {
-  return (
-    <CustomTextInput
-      placeholder="Enter an item!"
-      style={styles.fullWidth}
-      bottomBorder
-      {...props.input}
-      onSubmitEditing={submit(props.input.value)}
-    />
-  );
-}
+const FORM_NAME = 'todoInput';
 
-submit = val => {
-  // print the form values to the console
-  console.warn(val);
-};
+const renderInput = ({ input: { onChange, ...restInput }, onSubmitEditing }) => (
+  <TextInput onChangeText={onChange} {...restInput} onSubmitEditing={onSubmitEditing} />
+);
 
 function TodoInputForm(props) {
-  return <Field name="todoText" component={InputText} />;
+  const { handleSubmit } = props;
+  return <Field name="todoText" component={renderInput} onSubmitEditing={handleSubmit(submit)} />;
 }
 
 export default reduxForm({
-  form: 'todoInput'
+  form: FORM_NAME
 })(TodoInputForm);
+
+const submit = (values, dispatch) => {
+  const action = actionCreators.createTodo(values.todoText);
+  dispatch(action);
+  dispatch(reset(FORM_NAME));
+};
