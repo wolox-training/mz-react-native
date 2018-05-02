@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import { actionCreators } from '../../../redux/toDos/actions';
 
 import styles from './styles';
-import TodoInputForm from './components/TodoInput';
 import TodoList from './layout';
 
 class TodoListContainer extends React.Component {
