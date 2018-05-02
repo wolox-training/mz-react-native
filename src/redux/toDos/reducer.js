@@ -3,7 +3,8 @@ import Immutable from 'seamless-immutable';
 import { actions } from './actions';
 
 const defaultState = {
-  toDos: [{ text: 'primero', id: 1, completed: false }, { text: 'segundo', id: 2, completed: false }]
+  toDos: [],
+  maxID: 1
 };
 
 export default function reducer(state = Immutable(defaultState), action) {
@@ -18,6 +19,12 @@ export default function reducer(state = Immutable(defaultState), action) {
           }
           return todo;
         })
+      });
+    case actions.CREATE_TODO:
+      const newID = state.maxID + 1;
+      return state.merge({
+        toDos: state.toDos.concat({ id: newID, completed: false, text: action.text }),
+        maxID: newID
       });
     default:
       return state;
