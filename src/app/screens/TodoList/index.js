@@ -1,13 +1,26 @@
 import React from 'react';
-import { View } from 'react-native';
+import { connect } from 'react-redux';
+
+import { actionCreators } from '../../../redux/toDos/actions';
 
 import styles from './styles';
 import TodoInputForm from './components/TodoInput';
+import TodoList from './layout';
 
-export default function TodoList() {
-  return (
-    <View style={styles.container}>
-      <TodoInputForm handleSubmit={this.submit} />
-    </View>
-  );
+class TodoListContainer extends React.Component {
+  handleToggleComplete = id => {
+    const action = actionCreators.toggleToDoComplete(id);
+    this.props.dispatch(action);
+  };
+
+  handleDelete = id => {
+    const action = actionCreators.delete(id);
+    this.props.dispatch(action);
+  };
+
+  render() {
+    return <TodoList onToggleComplete={this.handleToggleComplete} onDelete={this.handleDelete} />;
+  }
 }
+
+export default connect()(TodoListContainer);
