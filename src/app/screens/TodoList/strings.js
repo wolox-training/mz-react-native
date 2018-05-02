@@ -1,2 +1,2 @@
-export const DONE = 'Listo';
-export const DELETE = 'Borrar';
+export const DONE = 'Done';
+export const DELETE = 'Delete';
