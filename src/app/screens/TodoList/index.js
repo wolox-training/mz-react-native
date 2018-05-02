@@ -5,7 +5,7 @@ import CustomText from '../../components/CustomText';
 
 import styles from './styles';
 
-export default function Home() {
+export default function TodoList() {
   return (
     <View style={styles.container}>
       <CustomText style={styles.mainButton}>RNTraining</CustomText>

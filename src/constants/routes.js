@@ -1,2 +1,2 @@
 exports.InitialLoading = 'InitialLoading';
-exports.Home = 'Home';
+exports.TodoList = 'Todo List';
