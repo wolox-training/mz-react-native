@@ -8,6 +8,8 @@ import { ROOT } from '../constants/platform';
 import { getCurrentRouteName } from '../utils/navUtils';
 import Navigator from '../app/screens';
 
+import toDos from './toDos/reducer';
+
 const nav = (state, action) => {
   const nextState = Navigator.router.getStateForAction(action, state);
   // Prevents navigating twice to the same route but allow navigate if same routes with different params
@@ -27,7 +29,8 @@ const nav = (state, action) => {
 };
 
 const reducers = combineReducers({
-  nav
+  nav,
+  toDos
 });
 
 const middlewares = [];
