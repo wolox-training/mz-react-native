@@ -3,17 +3,17 @@ import Immutable from 'seamless-immutable';
 import { actions } from './actions';
 
 const defaultState = {
-  toDos: [],
+  toDoList: [],
   maxID: 1
 };
 
 export default function reducer(state = Immutable(defaultState), action) {
   switch (action.type) {
     case actions.DELETE_TODO:
-      return state.merge({ toDos: state.toDos.filter(toDo => toDo.id !== action.id) });
+      return state.merge({ toDoList: state.toDoList.filter(toDo => toDo.id !== action.id) });
     case actions.TOGGLE_TODO_COMPLETE:
       return state.merge({
-        toDos: state.toDos.map(todo => {
+        toDoList: state.toDoList.map(todo => {
           if (todo.id === action.id) {
             return { ...todo, completed: !todo.completed };
           }
@@ -23,7 +23,7 @@ export default function reducer(state = Immutable(defaultState), action) {
     case actions.CREATE_TODO:
       const newID = state.maxID + 1;
       return state.merge({
-        toDos: state.toDos.concat({ id: newID, completed: false, text: action.text }),
+        toDoList: state.toDoList.concat({ id: newID, completed: false, text: action.text }),
         maxID: newID
       });
     default:

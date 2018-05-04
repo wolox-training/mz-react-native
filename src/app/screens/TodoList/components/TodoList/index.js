@@ -15,7 +15,7 @@ function TodoList({ onToggleComplete, onDelete, toDos }) {
 }
 
 const mapStateToProps = state => ({
-  toDos: state.toDos.toDos
+  toDos: state.toDos.toDoList
 });
 
 export default connect(mapStateToProps)(TodoList);
