@@ -3,10 +3,9 @@ import { Field, reduxForm, reset } from 'redux-form';
 import { TextInput } from 'react-native';
 
 import { actionCreators } from '../../../../../redux/toDos/actions';
+import { FORM_NAME, TODO_TEXT_FIELD } from '../../fieldFormName';
 
 import styles from './styles';
-
-const FORM_NAME = 'todoInput';
 
 const renderInput = ({ input: { onChange, ...restInput }, onSubmitEditing }) => (
   <TextInput onChangeText={onChange} {...restInput} onSubmitEditing={onSubmitEditing} />
@@ -14,7 +13,7 @@ const renderInput = ({ input: { onChange, ...restInput }, onSubmitEditing }) => 
 
 function TodoInputForm(props) {
   const { handleSubmit } = props;
-  return <Field name="todoText" component={renderInput} onSubmitEditing={handleSubmit(submit)} />;
+  return <Field name={TODO_TEXT_FIELD} component={renderInput} onSubmitEditing={handleSubmit(submit)} />;
 }
 
 export default reduxForm({
@@ -22,7 +21,7 @@ export default reduxForm({
 })(TodoInputForm);
 
 const submit = (values, dispatch) => {
-  const action = actionCreators.createTodo(values.todoText);
+  const action = actionCreators.createTodo(values[TODO_TEXT_FIELD]);
   dispatch(action);
   dispatch(reset(FORM_NAME));
 };
