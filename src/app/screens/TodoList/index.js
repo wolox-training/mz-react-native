@@ -17,8 +17,18 @@ class TodoListContainer extends React.Component {
     this.props.dispatch(action);
   };
 
+  handleSubmit = values => {
+    console.warn('submitting form', values);
+  };
+
   render() {
-    return <TodoList onToggleComplete={this.handleToggleComplete} onDelete={this.handleDelete} />;
+    return (
+      <TodoList
+        onToggleComplete={this.handleToggleComplete}
+        onDelete={this.handleDelete}
+        onSubmit={this.handleSubmit}
+      />
+    );
   }
 }
 
