@@ -1,6 +1,7 @@
 export const actions = {
   TOGGLE_TODO_COMPLETE: 'MARK_TODO_AS_DONE',
-  DELETE_TODO: 'DELETE_TODO'
+  DELETE_TODO: 'DELETE_TODO',
+  CREATE_TODO: 'CREATE_TODO'
 };
 
 export const actionCreators = {
@@ -9,5 +10,8 @@ export const actionCreators = {
   },
   delete(id) {
     return { type: actions.DELETE_TODO, id };
+  },
+  createTodo(text) {
+    return { type: actions.CREATE_TODO, text };
   }
 };

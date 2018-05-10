@@ -3,6 +3,7 @@ import Reactotron from 'reactotron-react-native';
 import thunk from 'redux-thunk';
 import { isEqual } from 'lodash';
 import { createReactNavigationReduxMiddleware } from 'react-navigation-redux-helpers';
+import { reducer as form } from 'redux-form';
 
 import { ROOT } from '../constants/platform';
 import { getCurrentRouteName } from '../utils/navUtils';
@@ -30,6 +31,7 @@ const nav = (state, action) => {
 
 const reducers = combineReducers({
   nav,
+  form,
   toDos
 });
 

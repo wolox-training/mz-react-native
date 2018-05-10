@@ -64,6 +64,21 @@ class CustomTextInput extends PureComponent {
   }
 }
 
+export default function WrapperTextInput(props) {
+  const { input, ...inputProps } = props;
+
+  return (
+    <CustomTextInput
+      {...inputProps}
+      onChangeText={input.onChange}
+      onChange={input.onChange}
+      onBlur={input.onBlur}
+      onFocus={input.onFocus}
+      value={input.value}
+    />
+  );
+}
+
 CustomTextInput.defaultProps = {
   placeholder: this.emptyString,
   autoCorrect: false,
@@ -99,5 +114,3 @@ CustomTextInput.propTypes = {
   secureTextEntry: PropTypes.bool,
   title: PropTypes.string
 };
-
-export default CustomTextInput;
